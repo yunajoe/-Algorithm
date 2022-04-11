@@ -1,35 +1,27 @@
-# i-1, j, k-1
-
-
 def solution(array, commands):
-    answer = []
+    answer = ""
     for i in commands:
-        data = ",".join(map(str, i))
-        a, b, c = data.split(",")
-        a = int(a)
-        b = int(b)
-        c = int(c)
-        pre2 = array[a-1:b]
-        pre2.sort()
-        pre3 = pre2[c-1]
-        answer.append(pre3)
-    return answer
-
-# 통과!
+        each = " ".join(map(str,i))
+        a, b, c = each.split(" ")
+        result = str(sorted(array[int(a)-1:int(b)])[int(c)-1])
+        answer = answer + result
+    return list(map(int,answer))
 
 
-# 다른 사람 풀이 1
+# 합계: 71.4 / 100.0
+
+
 def solution(array, commands):
     answer = []
-    for c in commands:
-        i, j, k = c
-        array2 = sorted(array[i-1:j])[k-1]
-        answer.append(array2)
+    for x in commands:
+        result = sorted(array[x[0]-1:x[1]])[x[2]-1]
+        answer.append(result)
     return answer
+# 통과
 
 
-# 다른 사람풀이 2
+# 다른 사람풀이
+
 
 def solution(array, commands):
-    return list(map(lambda x:sorted(array[x[0]-1:x[1]])[x[2]-1], commands))
-
+    return list(map(lambda x:sorted(array[x[0]-1:x[1]])[x[2]-1], commands)

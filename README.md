@@ -1,4 +1,3 @@
-# Algorithm
 
 ##  1일 1코딩 풀기를 목표로,  안되면 2틀은 넘기지 말자 :drooling_face:
 

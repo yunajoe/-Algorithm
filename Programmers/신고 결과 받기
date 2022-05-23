@@ -1,4 +1,5 @@
 
+# 0523
 def solution(id_list, report, k):  
     result = {}
     for i in report:

@@ -75,3 +75,54 @@ while True:
     else:
         print(None)
         break
+ 
+ 
+num = int(input())
+
+for i in range(1, num+1):
+    print(i, end=" ")
+ 
+even_count = 0 
+odd_count = 0
+while True:
+    num = int(input())
+    if num == 0:
+        break
+    elif num % 2 == 0:
+        even_count = even_count + 1
+    else:
+        odd_count = odd_count + 1
+print(f"odd : {odd_count}")
+print(f"even : {even_count}")
+
+total = 0
+cnt = 0
+while True:
+    num = int(input())
+    if num > 100:
+        break
+    else:
+        total = total + num 
+        cnt = cnt + 1
+        avg = total / cnt
+        
+print(f"sum : {total}")
+print(f"avg : {avg}")  
+
+
+cnt = 0
+while True:
+    num = int(input())
+    if num == 0:
+        break
+    elif num % 3 ==0 or num % 5 ==0:
+        continue
+    else:
+        cnt = cnt + 1
+print(f"{cnt}")
+        
+
+        
+ 
+ 
+

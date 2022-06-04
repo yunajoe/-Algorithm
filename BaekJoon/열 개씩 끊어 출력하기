@@ -1,0 +1,18 @@
+# 나의 풀이 
+# while 문이 어려워서  왠만하면은 while 문으로 연습하려고 한당
+words= input()
+k=0
+num=10
+start=0
+while k != (len(words) //10)+1: 
+    print(words[start:num])    
+    k = k+1
+    start = num  
+    num = num+10
+    
+-----------------------------------------------
+# for문으로도!
+
+for i in range(0,len(words),10):
+    print(words[i:i+10])
+    

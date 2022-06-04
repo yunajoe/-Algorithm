@@ -1,0 +1,72 @@
+# 2438 별찍기-1
+
+n = int(input())
+
+for i in range(1,n+1):
+    print(i*"*")
+    
+    
+    
+# 2439 별 찍기 - 2 
+# string.rjust(length, character)
+
+n = int(input())
+
+for i in range(1,n+1):
+    print(("*"*i).rjust(n))
+    
+    
+ # 2440 별 찍기 -3
+
+n = int(input())
+
+for i in range(n,0,-1):
+    print("*"*i)
+    
+    
+# 2441 별 찍기 - 4
+
+n = int(input())
+
+for i in range(n,0,-1):
+    print(("*"*i).rjust(n))
+    # n 자리수만큼 공백 으로 채워짐
+    
+# print(("*"*i).rjust(n,"#")) n자리수만큼 # 으로 채워짐
+
+
+# 2442 별 찍기 - 5
+# 첫번째는 보기에는 정답같아보이는데 ㅎ .. 틀림
+
+n = int(input())
+
+for i in range(1,n*2,2):
+    print((i*"*").center(n*2))
+    
+-----------------------------------    
+n = int(input())
+
+for i in range(1,n+1):
+    answer=" "*(n-i)+ "*"*((2*i)-1)
+    print(answer)
+    
+    
+# 2443 별 찍기 - 6
+
+n = int(input())
+
+for i in range(n*2-1, 0, -2):
+    print(i*"*")
+    
+    
+    
+    
+# 2444 별 찍기 - 7
+
+n = int(input())
+
+for i in range(1,n+1):
+    print(" "*(n-i)+(i*2-1)*"*")  # 앞에 space는 1,2,3,4 
+    
+for i in range(n-1,0,-1):    
+    print(" "*(n-i)+(i*2-1)* "*")

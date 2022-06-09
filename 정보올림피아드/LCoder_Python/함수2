@@ -120,3 +120,54 @@ def func(num):
     
 num_list = list(map(float,input().split())) 
 func(num_list)
+
+----------------------------------------------
+
+
+import math 
+
+def func(num1, num2):
+    n1,n2 = num1**(1/2), num2**(1/2)
+    min_num, max_num = math.trunc(n1), math.ceil(n2)
+    print(min_num, max_num)
+    
+a, b = map(float, input().split())
+func(a,b)
+
+----------------------------------------------
+
+
+def func(num):
+    return sum([abs(i) for i in num])
+
+num =list(map(int, input().split()))
+func(num)
+
+def func(num):    
+    answer =0
+    for x in num:
+        answer = answer + abs(x)
+    print(answer)
+
+num =list(map(int, input().split()))
+func(num)
+
+----------------------------------------------
+
+
+def func(num):
+    return 2**(num)
+
+n= int(input())
+func(n)
+
+import math 
+
+def func(num):
+    print(int(math.pow(2,num)))
+    
+    
+num = int(input())
+func(num)
+
+----------------------------------------------

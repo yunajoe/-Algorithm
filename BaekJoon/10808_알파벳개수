@@ -1,0 +1,43 @@
+
+
+
+import string 
+s = input().lower()
+list_lower = list(string.ascii_lowercase)
+dic = {}
+for a in list_lower:
+    dic[a] = dic.get(a,0) 
+for x in s:
+    if x in dic:
+        dic[x] = dic.get(x) +1
+for v in dic.values():
+    print(v, end=" ")
+    
+    
+----------------------------------------------------
+
+# 알파벳 소문자의 아스키 값은 97 ~ 122
+# 알파벳 대문자의 아스키 값은 65 ~ 90
+# ord -->> 문자열을 아스키코드로 반환할 수 있는 함수
+# chr -->> 아스키코드를 문자열로 반환할 수 있는 함수
+
+s = "baekjoon"
+
+alphabet_list = []
+
+for i in range(97,123):
+    alphabet_list.append(chr(i))
+alphabet_list
+    
+answer = len(alphabet_list) * [0]
+
+for cha in range(len(alphabet_list)):
+    for al in s:
+        if al == alphabet_list[cha]:
+            answer[cha] = answer[cha] + 1
+
+ans = list("".join(str(i) for i in answer))
+ans2 = list(map(int, ans))
+" ".join(str(x) for x in ans2)
+
+  

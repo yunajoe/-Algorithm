@@ -18,3 +18,25 @@ for k, v in dic.items():
 
 for v in dic.values():
     print(v)
+    
+    
+--------------------------------------------------------------
+
+# 다른풀이 
+## 참고 - https://somjang.tistory.com/entry/BaekJoon-2577%EB%B2%88-%EC%88%AB%EC%9E%90%EC%9D%98-%EA%B0%9C%EC%88%98-Python#:~:text=%5BBaekJoon%5D%
+n1 = int(input())
+n2 = int(input())
+n3 = int(input())
+
+answer = [0] * 10 
+
+# str로 변형하는 이유는 list로 만들어야 하기 떄문이댱
+nums = list(str(n1 * n2 * n3)) 
+
+
+for n in nums: 
+    answer[int(n)] = answer[int(n)] + 1
+    # int(n)은 answer 리스트의 index를 가리킨다. 
+
+for i in answer:
+    print(i)

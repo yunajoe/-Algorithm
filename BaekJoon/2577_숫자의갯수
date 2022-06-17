@@ -1,0 +1,20 @@
+dic = {}
+for i in range(0,10):
+    dic[i] = dic.get(i,0) 
+
+    
+
+total = 1
+for i in range(3):
+    num = int(input())
+    total = total * num 
+lis= list(map(int,list(str(total))))
+
+
+for k, v in dic.items():
+    for i in lis:
+        if i == k:
+            dic[k] = dic[k] + 1
+
+for v in dic.values():
+    print(v)

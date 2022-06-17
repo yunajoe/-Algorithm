@@ -1,0 +1,11 @@
+n = int(input()) 
+
+stack_lis = []
+for i in range(n):
+    num = int(input())
+    if num == 0:
+        stack_lis.pop()
+    else:
+        stack_lis.append(num)
+
+print(sum(stack_lis))

@@ -1,0 +1,26 @@
+n = int(input())
+lis = []
+for i in range(n):
+    commands=input().split()
+    c = commands[0]   
+    if c == "push":
+        lis.append(int(commands[1]))
+    elif c == "pop":
+        if len(lis) !=0:
+            print(lis.pop())
+        else:
+            print(-1)             
+    elif c == "size":
+        print(len(lis))        
+    elif c == "empty":
+        if len(lis) == 0:
+            print(1)
+        else:
+            print(0)
+    elif c =="top":
+        if len(lis) == 0:
+            print(-1)
+        else:
+            print(lis[-1])
+        
+    

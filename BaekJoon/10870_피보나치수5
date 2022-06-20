@@ -1,0 +1,20 @@
+def pibo(n):
+    if n <=1:
+        return n
+    return pibo(n-1) + pibo(n-2)
+
+num = int(input())
+pibo(num)
+
+----------------------------------------
+
+# 이건 왜 틀린걸까..
+def pibo(n):
+    if n <= 1:
+        return n     
+    else:
+        return pibo(n-1) + pibo(n-2)
+
+num = int(input())
+pibo(num)
+

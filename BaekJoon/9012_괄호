@@ -1,0 +1,90 @@
+def parenthesis():
+    s = input()
+    if len(s) %2 !=0:
+        print("NO")
+    else:
+        stack = []
+        for i in s:
+            if i == "(":
+                stack.append(i)        
+            elif i == ")": # ) 가 처음일경우 
+                if len(stack) == 0:
+                    print("NO")
+                    break
+                else:                    
+                    if stack[-1] != i:
+                            stack.pop() 
+                            
+        else: # break으로 안 끊겼을 경우 
+            if len(stack) == 0:
+                print("YES")
+            else:
+                print("NO")
+
+
+
+n = int(input())   
+
+for i in range(n):
+    parenthesis() 
+    
+    
+# 위에 문제 풀이와 비슷한 맥락
+
+T = int(input())
+
+for i in range(T):
+    stack = []
+    strs = input()
+    for s in strs:
+        if s == "(":
+            stack.append(s)
+        elif s == ")":
+            if stack: # 비어 있지 않다면 
+                stack.pop()
+            else: # 비어 있다면, ) 이 처음이라면
+                print("NO")
+                break
+    else: # break로 끊기질 않을 경우 수행 
+        if not stack: # 비어 있다면 
+            print("YES")
+        else: # 
+            print("NO")
+            
+   -------------------------------------------------------         
+   
+# 다른풀이들
+   
+   
+T = int(input()) ## 테스트케이스
+
+for _ in range(T):
+    stack = list(input())
+    pair_check=0
+    for cha in stack:
+        if cha == "(":
+            pair_check = pair_check + 1
+        elif cha == ")":
+            pair_check = pair_check -1
+            if pair_check < 0:
+                print("NO")
+                break  
+            
+    if pair_check ==0:
+        print("YES")
+        
+    elif pair_check > 0:
+        print("NO")
+        
+ -------------------------------------------------------         
+      
+        
+  for _ in range(int(input())):
+    strs = input()
+    while '()' in strs:
+        strs = strs.replace("()","")
+    print("NO" if strs else "YES")  # 문자가 비어 있으면 yes, 아니면 no
+            
+    
+    
+   

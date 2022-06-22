@@ -1,0 +1,29 @@
+nums = list(map(int, input().split()))
+
+max_num = max(nums)
+
+
+for i in range(len(nums)):
+    if nums[i] == max_num:
+        nums.pop(i)  # pop하고나면은 인덱스가 하나 줄어들기 때문에 out of range index를 조심해야한당
+        break
+nums.sort()
+print(nums[1])
+
+------------------------------------------------------------------
+def three_nums(nums):
+    max_num = max(nums)    
+    for i in range(len(nums)):
+        if nums[i] == max_num:
+            nums.pop(i)  # pop하고나면은 인덱스가 하나 줄어들기 때문에 out of range index를 조심해야한당
+            break
+    nums.sort()
+    print(nums[1])
+
+nums = list(map(int, input().split()))
+three_nums(nums)
+
+------------------------------------------------------------------
+nums = list(map(int, input().split()))
+nums.sort()
+print(nums[1])

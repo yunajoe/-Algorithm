@@ -1,0 +1,66 @@
+def solution(s):
+    lis = []
+    for i in range(1, len(s)+1):        
+        idx = i    
+        start=0
+        end_index=len(s)+1
+        nums_collect = []
+        while True:
+            new_s = s[start:idx]
+            nums_collect.append(new_s)
+            start = idx
+            idx = idx + i
+            if idx % end_index == 0:
+                break
+        answer = [num for num in nums_collect if num]  
+        lis.append(answer)
+    first_len = len(lis[0])
+    length_num = []
+    for li in range(1,len(lis)):
+        dic = {num:lis[li].count(num) for num in lis[li]}
+        
+        new = []
+        for k, v in dic.items():
+            if v ==1:
+                new.append(k)
+            else:
+                new.append("".join([str(v),k]))
+        length = len("".join(new))
+        length_num.append(length)
+    min_num = min(length_num)
+    answer = min(min_num, first_len) 
+    return answer
+    
+   # 합계: 16.0 / 100.0 하하하 
+        
+    --------------------------------------------------------------
+    
+   # 본 문제를 풀기전에 비슷한 문제, but 더 쉬움 문제를 풀어봄?
+   
+   strs = "aaabbcccccca"
+
+result=strs[0]
+cnt=0
+
+for s in strs:
+    if s == result[-1]:  # 
+        cnt = cnt + 1          
+    else:
+        result = result + str(cnt) + s
+        cnt = 1
+        
+result = result + str(cnt)  # 마지막 
+result   # 'a3b2c6a1
+
+숫자를 앞으로 하기 위해서는?
+
+numbers = re.findall(r'\d', result) # ['3', '2', '6', '1']
+strs = re.findall(r'[^0-9]', result) # ['a', 'b', 'c', 'a']
+
+res=[]
+for num, s in zip(numbers, strs):
+    res.append("".join([str(num),s]))
+"".join(res)
+
+'3a2b6c1a'
+    

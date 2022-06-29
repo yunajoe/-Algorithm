@@ -1,0 +1,20 @@
+def hanoi(nums,start,destination):
+    # nums = 원반의수 
+    # start = 시작위치 
+    # destination = 목적지 
+    # stop = 목적지가 아닌 곳 
+  
+    stop = 6 - start - destination
+    if nums == 0:
+        return # 옮길 원반이 없으면 종료!
+    
+    hanoi(nums-1, start, stop)
+    numbers = f"{start} {destination}"
+  
+    print(numbers)
+
+    hanoi(nums-1, stop, destination)
+
+n = int(input())
+print(2*3+1)
+hanoi(n,1,3)

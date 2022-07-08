@@ -1,0 +1,8 @@
+def func(a,b):
+    n1 = a[::-1]
+    n2 = b[::-1]
+    max_num = max(int(n1),int(n2))
+    return max_num
+
+a,b = input().split()
+print(func(a,b))

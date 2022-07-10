@@ -1,20 +1,79 @@
-def hanoi(nums,start,destination):
-    # nums = 원반의수 
-    # start = 시작위치 
-    # destination = 목적지 
-    # stop = 목적지가 아닌 곳 
-  
-    stop = 6 - start - destination
-    if nums == 0:
-        return # 옮길 원반이 없으면 종료!
-    
-    hanoi(nums-1, start, stop)
-    numbers = f"{start} {destination}"
-  
-    print(numbers)
 
-    hanoi(nums-1, stop, destination)
+# 성공한거.. 
+def move_disk(start_peg, end_peg): 
+    print(start_peg, end_peg)  
+ 
+def hanoi(num_disks,start_peg, end_peg):
+    if num_disks ==0:
+        return      
+    else:
+        mid_peg = 6 - start_peg - end_peg
+        hanoi(num_disks-1,start_peg, mid_peg)  
+    
+        move_disk(start_peg, end_peg) 
+        hanoi(num_disks-1,mid_peg, end_peg)
+        
+
+     
 
 n = int(input())
-print(2*3+1)
-hanoi(n,1,3)
+if n <=20:
+    print(2**n-1)
+    hanoi(n,1, 3)
+else:
+    print(2**n-1)
+---------------------------------------------------------
+# 함수를 부르는 갯수를 출력하려고 하는 것을 global 변수를 만들어 할려고 했는데 .. 그 값을 
+함수 과정 이전(정답형식)이 아닌 항수 과정 이후밖에 안되서 틀림
+
+def move_disk(start_peg, end_peg): 
+    print(f"{start_peg} {end_peg}")  
+lis = []
+cnt = 0   
+def hanoi(num_disks,start_peg, end_peg):
+    if num_disks ==0:
+        return      
+    else:
+        mid_peg = 6 - start_peg - end_peg
+        hanoi(num_disks-1,start_peg, mid_peg)
+        global cnt
+        cnt = cnt + 1
+        lis.append(cnt)
+    
+        move_disk(start_peg, end_peg) 
+        hanoi(num_disks-1,mid_peg, end_peg)
+        
+
+     
+
+n = int(input()) 
+hanoi(n,1, 3)
+lis[-1]
+
+---------------------------------------------------------
+
+
+
+def move_disk(start_peg, end_peg): 
+    print(f"{start_peg} {end_peg}")  
+lis = []
+cnt = 0   
+def hanoi(num_disks,start_peg, end_peg):
+    if num_disks ==0:
+        return      
+    else:
+        mid_peg = 6 - start_peg - end_peg
+        hanoi(num_disks-1,start_peg, mid_peg)
+        global cnt
+        cnt = cnt + 1
+        lis.append(cnt)
+    
+        move_disk(start_peg, end_peg) 
+        hanoi(num_disks-1,mid_peg, end_peg)   
+     
+
+n = int(input()) 
+hanoi(n,1, 3)
+lis[-1]
+
+

@@ -1,4 +1,22 @@
 
+'''   
+1914 하노이탑  
+1. 가장 큰 peg를 제외한 나머지들을 mid_peg로 옮기는 작업 
+2. 가장 큰 peg를 첫번째에서 마지막으로 옮김 
+3. mid_peg에 있떤 나머지들을 마지막 peg로 옭김 
+참고로 하노이탑은 큰 숫자가 아래 무조건! 있다. 
+
+'''
+
+
+
+
+
+
+
+
+
+
 # 성공한거.. 
 def move_disk(start_peg, end_peg): 
     print(start_peg, end_peg)  

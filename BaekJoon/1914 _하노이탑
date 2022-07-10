@@ -6,17 +6,7 @@
 3. mid_peg에 있떤 나머지들을 마지막 peg로 옭김 
 참고로 하노이탑은 큰 숫자가 아래 무조건! 있다. 
 
-'''
-
-
-
-
-
-
-
-
-
-
+'''   
 # 성공한거.. 
 def move_disk(start_peg, end_peg): 
     print(start_peg, end_peg)  

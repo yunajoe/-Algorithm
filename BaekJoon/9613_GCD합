@@ -1,0 +1,47 @@
+
+'''
+# 문제가 아래처럼 되어 있는데 10 ~ 40의 두쌍의 조합들의 최대공약수 합을 구하는 것이다... 
+# 처음에 4까지 구했다..ㅠㅠㅠㅠㅠㅠㅠㅠ
+4 10 20 30 40  
+3 7 5 12
+3 125 15 25
+'''
+# 9613 gcd 합 
+
+
+def gcd(n1,n2):
+    if n1 % n2 ==0:
+        return n2
+    else:
+        r = n1 % n2 
+        return gcd(n2,r)
+
+   
+        
+        
+n = int(input())
+
+for i in range(n):
+    lis = list(map(int, input().split())) 
+    total=0
+    for i in range(1,len(lis)):
+        for j in range(i+1, len(lis)):
+            total = total + gcd(lis[i],lis[j])
+    print(total)
+------------------------------------------------------------------
+# 다른풀이(from 다른사람 velog) 
+
+def gcd(a,b):
+    if b ==0:
+        return a
+    r = a % b 
+    return gcd(b,r)
+
+n = int(input())
+for _ in range(n):
+    lis = list(map(int, input().split()))
+    total=0
+    for i in range(1,len(lis)):  
+        for j in range(i+1, len(lis)):
+            total = total + gcd(lis[i],lis[j])
+    print(total)

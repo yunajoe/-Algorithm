@@ -1,0 +1,6 @@
+
+def func(num):
+    return sum([num[i]**2 for i in range(len(num))]) % 10 
+
+num_lis = list(map(int, input().split()))
+func(num_lis)

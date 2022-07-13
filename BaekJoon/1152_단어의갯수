@@ -1,0 +1,7 @@
+
+def func(sentence):
+    sentence = sentence.strip().split()    
+    return len(sentence)
+
+s = input()
+print(func(s))  

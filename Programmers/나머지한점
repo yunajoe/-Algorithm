@@ -16,3 +16,22 @@ def solution(v):
         if v !=2:
             answer.append(k)
     return answer
+
+-------------------------------------------------------------------
+# 다른 사람풀이 
+def solution(v):
+    answer = []
+    x = [] 
+    y = []
+    # list.remove(element)
+    for lis in v:
+        if lis[0] not in x:
+            x.append(lis[0])
+        else:
+            x.remove(lis[0])
+        if lis[1] not in y:
+            y.append(lis[1])
+        else:
+            y.remove(lis[1])
+    answer = x + y 
+    return answer

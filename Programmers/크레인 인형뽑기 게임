@@ -16,3 +16,28 @@ def solution(board, moves):
                 break
 
     return answer
+
+
+-----------------------------------------------------------------------------------
+
+def solution(board, moves):
+    # moves가 board안의 list 인덱스가 아니라, 각각의 list의 원소들의 위치를 말하는것
+    # 결국  각각 list안의 원소 들을 다 뽑아야 함.. 
+    answer = 0
+    basket=[]
+    
+    for move in moves:
+        for lis in board:
+            if lis[move-1] != 0: # 인형이 있다면,( move-1을 해야 인덱스가 맞음)
+                basket.append(lis[move-1]) # basket에 append해줌 
+                lis[move-1] = 0 # 그리고 뽑은 인형을 0으로 (인형out!)
+                break
+        # break을 안 하면은 각각의 move에 해당하는 lis전체가 한 반퀴 다 돌고나서 아래 코드가 수행되기 때문에 연속적인 인형을 터트릴 수 X
+        if len(basket) >=2 and basket[-1] == basket[-2]:
+            answer += 2
+            basket = basket[:-2]        
+    return answer 
+                
+            
+            
+            

@@ -1,0 +1,45 @@
+
+# 처음풀이.. 왜 안되는지 알고시펑! 
+def change(money):
+    
+    five_num= money // 5  # 2
+    for i in range(five_num+1):
+        five_money = i * 5 # 5, 10 
+        two_money = money - five_money # 3, -2
+        if two_money < 0 or two_money % 2 !=0:
+            continue
+        if two_money % 2 == 0:
+            two_num = two_money // 2
+            answer = two_num + i 
+            return answer
+        
+        
+    
+n = int(input())
+print(change(n))
+
+
+
+
+
+
+
+===========================================================   
+
+def change(money):
+    answer=0
+    while True:
+        if money % 5 == 0:
+            answer += money // 5 
+            break            
+        else:
+            money -= 2
+            answer += 1
+            if answer < -1:  # 7원같은 경우..? 2로 나눴을때도 1일..남아서 return -1
+                break
+    if answer < -1:
+        return -1 
+    return answer
+
+
+print(change(13))

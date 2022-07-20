@@ -1,0 +1,12 @@
+n = int(input())
+a = list(map(int, input().split()))
+b = list(map(int, input().split()))
+
+result = 0
+for _ in range(n):
+    a_min = min(a)
+    b_max = max(b)
+    result += (a_min*b_max)
+    a.pop(a.index(a_min))
+    b.pop(b.index(b_max))
+print(result)

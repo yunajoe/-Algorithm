@@ -1,0 +1,33 @@
+## 나의 풀이
+def func(num):    
+    if num == 1:
+        return   
+    answer=""
+    while True:       
+        q = num // 2
+        r = num % 2 
+        answer += str(r)
+        if q == 1:
+            break
+        num = q
+        func(num)
+    return int("1"+answer[::-1])
+
+n = int(input())
+print(func(n))
+
+================================================
+
+# 해설풀이 
+# 몫을 0이 될때까지 나눈다 
+
+def DFS(x):
+    if x == 0 :
+        return 
+    else:
+        DFS(x//2)
+        print(x%2, end="")
+        
+if __name__ == "__main__":
+    n = int(input())
+    DFS(n)

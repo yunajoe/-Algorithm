@@ -1,0 +1,10 @@
+n = int(input())
+words_list = []
+for _ in range(n):
+    words_list.append(input())
+    
+result = list(set(words_list))
+
+answer = sorted(result, key=lambda x: (len(x), x))
+for i in answer:
+    print(i)

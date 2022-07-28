@@ -1,0 +1,88 @@
+
+#  첫번째 1 
+
+# 성공은 했으나 메모리와 시간이 너무 많이 걸림 ㅠ
+
+n = int(input())
+res = [input() for i in range(n)]
+extension = []
+for i in res:
+    var = i.split(".")[1]
+    extension.append(i.split(".")[1])
+
+
+dic = {}
+for x in extension:
+    if x not in dic:
+        dic[x] = 1
+    else:
+        dic[x] += 1
+        
+answer = sorted(dic.items(), key=lambda x: x[0])
+for i in answer:
+    for j in i:
+        print(j, end=" ")
+    print()
+    
+    
+=======================================================
+
+
+# 두번째 2  ==> 시간초과
+
+def countF2(lst, x):
+    return lst.count(x)
+
+
+n = int(input())
+res = [input() for i in range(n)]
+
+extension = []
+for i in res:
+    var = i.split(".")[1]
+    extension.append(i.split(".")[1]) 
+
+
+dic = {}
+for i in extension:
+    dic[i] = countF2(extension,i)
+
+    
+for k, v in dic.items():
+    print(k,v)
+    
+    
+=======================================================
+
+# 다른 사람 풀이 
+
+from collections import Counter
+
+
+def arrange_files(file_list):
+    file_formats = []
+    for file in file_list:
+        _, file_format = file.split(".")
+        file_formats.append(file_format)
+    cnt = Counter(file_formats).items()      
+    
+    sorted_list = sorted(cnt, key=lambda x: x[0])
+
+    for item in sorted_list:
+        print(f"{item[0]} {item[1]}")
+        
+        
+if __name__ == "__main__":
+    file_list = []
+    for _ in range(int(input())):
+        file = input()
+        file_list.append(file)         
+    arrange_files(file_list)
+
+
+## 출처
+https://somjang.tistory.com/entry/BaekJoon-20291%EB%B2%88-%ED%8C%8C%EC%9D%BC-%EC%A0%95%EB%A6%AC-Python
+
+
+
+

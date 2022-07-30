@@ -1,0 +1,69 @@
+def func(lis:list):
+    compare = [i for i in range(1,31)]
+    answer = sorted([ele for ele in compare if ele not in lis])  
+    return answer[0], answer[1]     
+
+
+lis = sorted([int(input()) for i in range(1,29)])
+n1, n2 = func(lis)
+print(n1)
+print(n2)
+
+cf.설명: 
+```
+처음에 아래 처럼 했더니 틀림 ==> 왜냐하면, 해당 출력값 + none값도 같이 나왔기 때문 
+def func(attentance : list):
+    compare = [i for i in range(1,31)]
+    attentance = attentance + [0,0]
+    attentance = sorted([i for i, j in zip(compare, attentance) if j==0])
+    for i in attentance:
+        print(i)
+    
+if __name__ == "__main__":
+    answer = []
+    for i in range(1,29):
+        answer.append(int(input()))     
+    answer = sorted(answer)
+    func(answer)
+    
+```
+
+=====================================================================
+
+## 런타임 에러 
+def no_report(numbers):
+    set_numbers = list(range(1,31)) - numbers
+    set_numbers.sort()
+    return set_numbers[0], set_numbers[1]
+
+numbers = []
+for _ in range(28):
+    numbers.append(int(input()))
+n1, n2 = no_report(numbers)
+print(n1)
+print(n2)
+
+## 위와 코드는 동일하나 set()을 함
+
+def no_report(numbers):
+    set_numbers = list(set(range(1, 31)) - set(numbers))
+    
+    set_numbers.sort()
+    
+    return set_numbers[0], set_numbers[1]
+
+
+if __name__ == "__main__":
+    numbers = []
+    for _ in range(28):
+        number = int(input())
+        numbers.append(number)
+        
+    num1, num2 = no_report(numbers)
+    print(num1)
+    print(num2)
+
+출처: https://somjang.tistory.com/entry/BaekJoon-5597번-과제-안-내신-분-Python [솜씨좋은장씨:티스토리]
+
+        
+      

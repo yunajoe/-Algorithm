@@ -1,0 +1,6 @@
+
+n = int(input())
+for i in range(n):
+    num = int(input())
+    num_lis = list(map(int, input().split()))
+    print(min(num_lis), max(num_lis))

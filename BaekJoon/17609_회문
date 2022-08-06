@@ -1,0 +1,41 @@
+def pal(word : str):
+    mid = len(word)//2 
+    if len(word) % 2 == 0: 
+        if word[:mid] == word[mid:][::-1]:
+            return 0
+        elif pesudo(word) == 0:
+            return 1             
+        else:
+            return 2
+    else:
+        if word[:mid] == word[mid+1:][::-1]:
+            return 0
+        elif pesudo(word) == 0:
+            return 1             
+        else:
+            return 2
+    
+def pesudo(word : str):
+    word = list(word)
+    new_word = list(word)
+    idx = 0
+    while True:
+        del word[idx]
+        if pal("".join(word)) == 0:
+            return 0
+        word = new_word.copy()
+        idx += 1
+        if idx == len(word):
+            break
+ 
+n = int(input())
+lis = [input() for i in range(n)]
+for i in lis:
+    print(pal(i))  # 런타임에러........
+   
+==========================================================================
+    
+
+
+        
+        

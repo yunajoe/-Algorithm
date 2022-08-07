@@ -72,4 +72,48 @@ for i in lis:
     print(pal(i))
 
         
+============================================================================
+
+import sys
+
+
+def pesudo(word, left, right):
+    while left < right:
+        if word[left] == word[right]:  # 단어가 같으면 인덱스를 늘려가면 다른 단어들도 같은지 확인
+            left += 1 
+            right -= 1
+        else:
+            return False   # 중간에 interrupt하면은 유사회문도 아님     
+    return True  # while문 다 돌면은 유사회문 !! 
+            
+    
+
+def pal(word, left, right):
+    if word == word[::-1]:  # 앞에서 읽으나 뒤에서 읽으나 같으면 펠린드롬!
+        return 0
+    else:  # 아니면 유사회문일지..? 아니면은 아예 안되는 단어인지 확인필요
+        while left < right:
+            if word[left] != word[right]:  # 왼쪽에서 시작되는 단어와 오른쪽에 시작되는 단어가 다를때!
+                check_left = pesudo(word, left+1, right)
+                check_right = pesudo(word, left, right-1)
+                if check_left or check_right:
+                    return 1                    
+                return 2 
+            else:
+                left += 1
+                right -= 1
+       
+                
+n = int(input())
+
+for _ in range(n):
+    word = sys.stdin.readline().rstrip("\n")
+    # rstrip("\n") 안해주면 틀림
+    left, right = 0, len(word)-1
+    print(pal(word, left, right))
+    
+            
+            
+            
+            
         

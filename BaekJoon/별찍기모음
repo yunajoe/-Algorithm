@@ -98,3 +98,36 @@ for j in range(n-1,0,-1):
 ------------------------------------------------------------
 
 # 10994 별 찍기 -19 (recursive)
+
+
+
+n = int(input())
+length = 4 * (n - 1) + 1
+size = [[" "]*length for _ in range(length)]
+
+def func(num, idx):
+    if num == 1:
+        size[0][0] = "*"
+        return 
+    for i in range(length):
+        size[0][i] = "*"
+        size[length-1][i]= "*"
+        size[i][0] ="*"
+        size[i][length-1] = "*"
+    return func(num-1,idx+2)
+
+
+
+
+
+if __name__ == "__main__":
+    func(n,0)
+    for i in range(length):
+        for j in range(length):
+            print(size[i][j], end="")
+        print()
+    
+-----------------------------------------------------------------        
+     
+        
+        

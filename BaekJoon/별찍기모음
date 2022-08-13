@@ -163,6 +163,35 @@ if __name__ == "__main__":
         
     
 -----------------------------------------------------------------        
+
+
+
+
+num = int(input())
+lines = 1+(num-1)*4
+size = [lines*[" "] for _ in range(lines)]
      
+ def func(num, idx):
+    if num == 1:
+        size[idx][idx] = "*"
+        return 
+    length = 1+(num-1)*4  # 재귀함수의 n에 맞춰서 range를 줘야 하기 떄문
+    for i in range(idx,length+idx):
+        size[idx][i] = "*"
+        size[idx+length-1][i] = "*"
         
+        size[i][idx] = "*"
+        size[i][idx+length-1] = "*"
+    return func(num-1,idx+2)
+
+        
+    
+    
+
+if __name__ == "__main__":
+   func(num, 0)
+    for i in range(lines):
+        for j in range(lines):
+            print(size[i][j],end="")
+        print()
         

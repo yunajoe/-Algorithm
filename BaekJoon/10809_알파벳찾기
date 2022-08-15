@@ -1,5 +1,7 @@
 
 
+# try1
+
 # chr(): 아스키 코드값을 문자로 변환해 주는 함수
 # ord(): 문자를 아스키 코드값으로 변환해 주는 함수 
 
@@ -26,7 +28,29 @@ for i in list(map(int, refer)):
     print(i, end= " ")
     
     
-     
+=================================================================================
+
+
+alpha_list = list(map(chr,range(97, 123)))     
+    
+def func(strs: str):    
+    answer = []
+    for i in range(len(alpha_list)):
+        if  alpha_list[i] in strs:
+            answer.append(list(strs).index(alpha_list[i]))
+        else:
+            answer.append(-1) 
+    
+    for ele in answer:
+        print(ele, end=" ")
+        
+            
+if __name__ == "__main__":
+    strs = input()
+    func(strs)
+ 
+    
+    
    
 
  

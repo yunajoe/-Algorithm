@@ -1,11 +1,23 @@
 def solution(arr):
     duplicated_index = [i+1 for i in range(len(arr)-1) if arr[i] == arr[i+1]]    
    return [arr[i] for i in range(len(arr)) if i not in duplicated_index]
-   
-   
-```   
+ 
+
 정확성: 71.9
 효율성: 0.0
 합계: 71.9 / 100.0
-```
-           
+
+==========================================================================================
+# Try 2
+
+def solution(arr):
+    stack = []
+    for num in arr:
+        if num not in stack:
+            stack.append(num)
+        elif stack[-1] != num:
+            stack.append(num)
+    return stack
+
+==========================================================================================
+

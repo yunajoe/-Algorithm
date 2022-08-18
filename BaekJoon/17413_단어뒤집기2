@@ -1,0 +1,6 @@
+if s.startswith("<"):
+    print("태그있음")
+else: # 태그가 없을때..
+    strs = s.split()
+    print(" ".join([str[::-1] for str in strs]))
+    

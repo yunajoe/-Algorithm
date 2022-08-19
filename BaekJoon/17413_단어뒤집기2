@@ -28,6 +28,7 @@ for i in s:
         if stack:   
             answer = answer + stack[::-1] +" "
             stack = ""
+           
         continue
         
     if tag : # 태그가 열려 있을때는 문자는 그대로 붙여준다.
@@ -38,5 +39,17 @@ else:
     answer = answer + stack[::-1]
     stack = ""
    
-cf. 문제는?! s가  "<ab cd>ef gh<ij kl>" 일 때 태그안에 공란이 안 붙여진다..
+cf. 문제는?! s가  "<ab cd>ef gh<ij kl>" 일 때 태그안에 공란이 안 붙여진다.그래서 아래처럼 했는데도, 틀렸음..
+    
+if i == " ":
+    if stack:   
+        answer = answer + stack[::-1] +" "
+        stack = ""
+    else:
+        answer = answer + i
+    continue
+===========================================================================================
+
+
+ 
 

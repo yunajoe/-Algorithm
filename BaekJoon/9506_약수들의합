@@ -1,0 +1,25 @@
+def func(num):
+    answer = f"{num} = "
+    factors = [i for i in range(1,num//2+1) if num % i == 0]
+    if num == sum(factors):
+        exp = " + ".join(map(str,factors))
+        answer += exp
+        return answer
+            
+    else:
+        return f"{num} is NOT perfect."
+     
+            
+if __name__ == "__main__":
+    while True:
+        num = int(input())
+        
+        if num == -1:
+            break
+            
+        print(func(num))
+        
+        
+==========================================================================================
+
+

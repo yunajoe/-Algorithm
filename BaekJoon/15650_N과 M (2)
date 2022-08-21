@@ -21,3 +21,20 @@ def func(n,m):
 
 n, m = map(int, input().split()) 
 func(n,m)
+
+====================================================
+# 다른 풀이 
+
+n,m = list(map(int,input().split()))
+result = []
+def dfs(start):
+    if len(result)==m:
+        print(' '.join(map(str,result)))
+        return
+    
+    for i in range(start,n+1):
+        if i not in s:
+            result.append(i)
+            dfs(i+1)
+            reuslt.pop()
+dfs(1)

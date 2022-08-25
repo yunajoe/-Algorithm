@@ -1,0 +1,15 @@
+n,m = map(int, input().split())
+num_list = list(map(int, input().split()))
+answer = []
+def func(start):
+    if m == len(answer):
+        print(" ".join(map(str, answer)))         
+    else:
+        num_list.sort()
+        for i in range(start, n):
+            answer.append(num_list[i])
+            func(0)
+            answer.pop()
+            
+func(0)
+           

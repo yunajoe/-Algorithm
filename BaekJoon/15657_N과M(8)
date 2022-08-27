@@ -1,0 +1,19 @@
+
+n,m = map(int, input().split())
+num_list = list(map(int, input().split())) 
+result = []
+
+def func(idx):
+    if len(result) == m:
+        print(" ".join(map(str,result)))
+        return 
+    else:
+        num_list.sort()
+        for idx in range(idx,len(num_list)):
+            result.append(num_list[idx])
+            func(idx)
+            result.pop()
+func(0)
+        
+    
+            

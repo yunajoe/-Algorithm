@@ -1,15 +1,17 @@
 n,m = map(int, input().split())
 num_list = list(map(int, input().split()))
-answer = []
+result = []
+
 def func(start):
-    if m == len(answer):
-        print(" ".join(map(str, answer)))         
+    if m == len(result):
+        print(" ".join(map(str, result)))
     else:
         num_list.sort()
         for i in range(start, n):
-            answer.append(num_list[i])
-            func(0)
-            answer.pop()
-            
+            if num_list[i] not in result:
+                result.append(num_list[i])
+                func(i)
+                result.pop()
+                
 func(0)
            

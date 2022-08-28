@@ -1,0 +1,21 @@
+
+cnt = 0 
+new = [] 
+def func(cards_list, num_order_list):    
+    while True:
+        for i in range(len(cards_list)):
+            for j in num_order_list:
+                new.append(cards_list[j-1])
+                print(cards_list[j-1], end=" ")
+            print()       
+        
+        cards_list = new[:n]
+        cnt = cnt + 1
+        if cnt == mix_num:
+            break 
+
+n, mix_num = map(int, input().split())
+
+cards_list = list(map(int, input().split()))
+num_order_list = list(map(int, input().split()))
+func(cards_list ,num_order_list)

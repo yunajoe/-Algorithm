@@ -22,5 +22,18 @@ func(cards_list ,num_order_list)
 
 
 ====================================================================
+try2 
+
+n,k = map(int,input().split())
+cards_list = list(map(int,input().split()))
+order_list  = list(map(int,input().split()))   
+
+temp = []
+for i in range(k):
+    for idx, num in enumerate(order_list):
+        temp.append(cards_list[num-1])
+    cards_list = temp 
+    temp = []
+print(cards_list)
 
 

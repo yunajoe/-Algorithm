@@ -19,3 +19,8 @@ n, mix_num = map(int, input().split())
 cards_list = list(map(int, input().split()))
 num_order_list = list(map(int, input().split()))
 func(cards_list ,num_order_list)
+
+
+====================================================================
+
+

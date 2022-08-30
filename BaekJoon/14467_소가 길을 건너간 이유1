@@ -1,0 +1,23 @@
+n = int(input())
+
+res = []
+for i in range(n):
+    a, b = list(map(int, input().split()))
+    res.append([a,b])
+dic = {}
+for ele in res:
+    if ele[0] not in dic:
+        dic[ele[0]] = [ele[1]]
+    else:
+        dic[ele[0]].append(ele[1])    
+        
+res = [v for k, v in dic.items() if len(v) != 1]
+cnt = 0 
+for i in range(len(res)):
+    for idx in range(len(res[i])-1):
+        if res[i][idx] != res[i][idx+1]:
+            cnt += 1       
+     
+            
+print(cnt)
+       

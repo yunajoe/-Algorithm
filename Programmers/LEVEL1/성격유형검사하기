@@ -25,4 +25,30 @@ for k, v in score.items():  # {'M': 2, 'C': 1, 'N': 1, 'A': 1, 'T': 3}
                 dic[types] = v
             else:
                 dic[types] += v
+                
+                
+# 결고 지표와 비교하기  
+
+reference = ["RT", "CF", "JM", "AN"]
+
+refer2 = [list(refer) for refer in reference]
+
+
+
+answer = []
+for item in refer2:
+    for k, v in dic.items():
+        if k in item:
+            item2 = item.copy()      
+            k_index = item.index(k)
+            return_value = item.pop(k_index)
+            if len(item) == 0:
+                item2.sort()
+                last = item2[0]
+                answer.append(last)
+            else:
+                answer.append(return_value)
+            
+        
+"".join(answer)  # TCMNA 
 

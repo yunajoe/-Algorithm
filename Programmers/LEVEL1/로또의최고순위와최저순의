@@ -1,0 +1,12 @@
+def solution(lottos, win_nums):
+    rank_dic = {6:1, 5:2, 4:3, 3:4, 2:5, 1:6, 0:6}
+    lottos.sort()
+    win_nums.sort()
+    min_rank = 0
+    for num in win_nums:
+        for num2 in lottos:
+            if num == num2:
+                min_rank += 1
+    zero_count = lottos.count(0) 
+    max_rank = min_rank + zero_count
+    return [rank_dic[max_rank], rank_dic[min_rank]]

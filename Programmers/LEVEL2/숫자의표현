@@ -1,0 +1,14 @@
+import math
+def solution(n):    
+    answer = 1  # 왜냐하면 자기자신의 수
+    standard = math.ceil(n/2)  # 8 
+    for i in range(1,standard): # index는 7까지 해야됨 
+        cnt = 0 
+        for j in range(i, n+1):
+            cnt += j 
+            if cnt == n:
+                answer += 1
+                break                   
+            elif cnt > n: break    
+    return answer
+     

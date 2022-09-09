@@ -1,0 +1,31 @@
+def solution(answers):
+    answer = []
+    p1 = [1, 2, 3,4,5]
+    p2 = [2,1,2,3,2,4,2,5]
+    p3 = [3, 3, 1, 1, 2, 2, 4, 4, 5, 5]
+    people = [p1,p2,p3]
+    people_cnt =  [0,0,0]      
+    score = 0
+    cnt = 0 
+             
+    for idx in range(len(people)): # idx = 0,1,2 
+        for num in range(len(answers)):
+            if answers[num] == people[idx][num]:
+                score += 1                
+        people_cnt[idx] = score
+        score = 0
+        cnt += 1
+    max_score = max(people_cnt) 
+    return [idx+1 for idx, value in enumerate(people_cnt) if value == max_score]
+    
+    
+    # 정확성: 21.4, RUNTIME 에러가 났다
+    
+
+
+                
+                
+                        
+                    
+            
+            

@@ -19,7 +19,47 @@ def solution(answers):
     return [idx+1 for idx, value in enumerate(people_cnt) if value == max_score]
     
     
-    # 정확성: 21.4, RUNTIME 에러가 났다
+    # 정확성: 21.4, RUNTIME 에러가 났다.아무래도 정답지가 1000일 경우에는 완전탐색을 할 경우 RunTime에러가 날 수 있기 때문 
+    
+  ============================================================================
+    # 다른사람풀이 
+    
+  def solution(answers):
+    answer = []
+    p1 = [1,2,3,4,5]
+    p2 = [2, 1, 2, 3, 2, 4, 2, 5]
+    p3 = [3, 3, 1, 1, 2, 2, 4, 4, 5, 5] 
+    cnt_1 = 0 
+    cnt_2 = 0 
+    cnt_3 = 0 
+    
+    for i in range(len(answers)):
+        if p1[i%len(p1)] == answers[i]:
+            cnt_1 += 1
+            
+        # 여기서 elif를 사용하면은 안되는 이유는 elif할때 해당이 되면은 밑에 코드가 안 돌아가고 
+        # i += 1를 해주기 때문이다. 
+        if p2[i%len(p2)] == answers[i]:
+            cnt_2 += 1             
+        if p3[i%len(p3)] == answers[i]:
+            cnt_3 += 1  # cnt_1, cnt_2, cnt_3 = [5,0,0] or [2,2,2]
+    max_cnt = max(cnt_1, cnt_2, cnt_3)  
+
+    if cnt_1 == max_cnt:
+        answer.append(1)
+    if cnt_2 == max_cnt:
+        answer.append(2)
+    if cnt_3 == max_cnt:
+        answer.append(3)
+    return answer
+    
+    출처: https://somjang.tistory.com/entry/Programmers-%EC%99%84%EC%A0%84%ED%83%90%EC%83%89-%EB%AA%A8%EC%9D%98%EA%B3%A0%EC%82%AC-Python 
+  
+            
+            
+  
+            
+  
     
 
 

@@ -1,0 +1,38 @@
+def condition(s):
+    figure1 = "()"
+    figure2 = "[]"
+    figure3 = "{}"
+    cnt = 0 
+    num = len(s) 
+    while cnt != num:
+        if figure1 or figure2 or figure3 in s:            
+            s = s.replace(figure1,"")
+            s = s.replace(figure2,"")
+            s = s.replace(figure3,"") 
+            cnt += 1
+            if len(s) == 0:
+                break  
+    return s
+
+def solution(s):      
+    # 0이면은 올바른 문자열
+    answer = 0
+    applied_s = condition(s)
+    if len(s) == 0:
+        answer += 1
+        # x칸만큼 회전시키기
+        x = 1         
+        while x != num:
+            s = s[x:] + s[:x]  
+            applied_s = condition(s)
+            if len(applied_s) == 0:
+                answer += 1
+                x += 1
+            else:
+                x += 1
+    return answer
+        
+
+        
+    
+ 

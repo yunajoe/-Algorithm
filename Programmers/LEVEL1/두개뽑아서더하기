@@ -1,0 +1,8 @@
+def solution(numbers):
+    answer = []  # 0,1  02 03 04 / 12 13 14 / 23 24 / 34
+    for i in range(len(numbers)):
+        for j in range(i+1, len(numbers)):
+            answer.append(numbers[i]+numbers[j])
+    final = list(set(answer))  
+    final.sort()
+    return final

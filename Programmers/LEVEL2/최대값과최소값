@@ -1,0 +1,10 @@
+def solution(s):
+    answer = []
+    result = s.split()     
+    for num in result:
+        if int(num) >=0: 
+            min_num, max_num = min(result), max(result)          
+        else:
+            min_num, max_num = max(result), min(result)
+    return " ".join([min_num, max_num])
+  

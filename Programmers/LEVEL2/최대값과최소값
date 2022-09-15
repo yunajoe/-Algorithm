@@ -13,5 +13,5 @@ def solution(s):
 def solution(s):  
     result = list(map(int, s.split()))
     min_num, max_num = min(result), max(result)
-    return " ".join(map(str,[min_num, max_num]))
+    return " ".join(map(str,[min_num, max_num]))  # return str(min_num) + " " + str(max_num)
  

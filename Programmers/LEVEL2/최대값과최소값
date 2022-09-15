@@ -5,6 +5,13 @@ def solution(s):
         if int(num) >=0: 
             min_num, max_num = min(result), max(result)          
         else:
-            min_num, max_num = max(result), min(result)
+            min_num, max_num = max(result), min(result)  // 음수일때 result에서 max, min을 구하면은 min은 -1 이 되고, max는 -4가 된다.
     return " ".join([min_num, max_num])
+    
+=============================================================================
   
+def solution(s):  
+    result = list(map(int, s.split()))
+    min_num, max_num = min(result), max(result)
+    return " ".join(map(str,[min_num, max_num]))
+ 

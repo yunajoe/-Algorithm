@@ -14,3 +14,13 @@ def solution(s):
 
 # 합계: 44.4 / 100.0
 
+===========================================================================
+
+def solution(s):   
+    s = s.split(" ")
+    for i in range(len(s)):
+        s[i] = s[i][:1].upper() + s[i][1:].lower()
+    return " ".join(s)     
+  
+
+    

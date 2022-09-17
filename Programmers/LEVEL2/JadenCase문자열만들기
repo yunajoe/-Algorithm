@@ -1,0 +1,13 @@
+# 모든 단어의 첫 문자가 대문자, 그 외의 알파벳은 소문자인 문자열
+# 첫문자가 alphabet이 아닐 경우는,  알파벳이 있는 구간은 소문자로 이어주면됨 
+def solution(s):
+    answer = ""
+    for cha in s.split():
+        if cha.isalpha():  # True
+            first = "".join(cha[0].upper()) 
+            word = first + "".join(cha[1:].lower())
+            answer += word + " "
+        else:  # False 
+            first = cha[0] + cha[1:].lower()   
+            answer = first +" "+ answer
+    return answer[:-1]

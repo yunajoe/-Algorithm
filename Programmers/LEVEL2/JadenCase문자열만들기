@@ -11,3 +11,6 @@ def solution(s):
             first = cha[0] + cha[1:].lower()   
             answer = first +" "+ answer
     return answer[:-1]
+
+# 합계: 44.4 / 100.0
+

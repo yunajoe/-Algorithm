@@ -1,0 +1,23 @@
+s = "01110"
+answer = [0,0] 
+def binary(s):
+    num = len(s)
+    result = list()
+    q, r = num // 2, num % 2 
+    while q != 0:   
+        result.append(r)   
+        q, r = q //2, q % 2
+    result.append(r)
+    return "".join(map(str, result[::-1]))          
+
+
+def solution(s):
+    while len(s) != 1: 
+        start_len = len(s)
+        zero_num = s.count("0")
+        s = s.replace("0", "")   
+        s = binary(s)
+        answer[0] = answer[0] + 1
+        answer[1] = answer[1] + zero_num
+    return answer
+        

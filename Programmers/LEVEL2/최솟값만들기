@@ -1,0 +1,23 @@
+import itertools  
+def solution(A,B):  
+    length = len(B)
+    per = list(itertools.permutations(B, length))
+    min_value = 0     
+    for p in per:
+        res = []        
+        for a, b in zip(A,list(p)):
+            res.append(a*b)
+        num = sum(res)
+        print(num)
+        
+# 시간초과
+
+        
+    
+
+     
+           
+        
+  
+    
+    

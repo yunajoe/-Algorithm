@@ -13,3 +13,35 @@ def solution(s):
 정확성: 69.5
 효율성: 0.0
 합계: 69.5 / 100.0
+
+==================================================================================
+
+
+def solution(s):
+    answer = True
+    mystack = []     
+    for idx, bracket in enumerate(s):
+        if bracket == "(":
+            mystack.append(bracket)
+        else: # ")"일 때 
+            try:    # 리스트에서 pop했을때 ( 이면운
+                if mystack.pop() == "(": 
+                    pass
+            # 리스트 안에 아무것도 없을때. 즉, 리스트안에는(밖에 못 들어간다. ( 없다는 것은 ==> )로 시작됬다는 것. )로 시작하면은 안됨
+            except: 
+                answer = False
+                break 
+    if len(mystack): # 리스트안에 원소가 있으면?!
+        answer = False          
+    return answer
+                
+                
+ ==================================================================================
+                
+                
+                
+                    
+            
+            
+
+

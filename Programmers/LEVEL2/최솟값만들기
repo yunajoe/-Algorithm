@@ -12,6 +12,16 @@ def solution(A,B):
         
 # 시간초과
 
+===============================================
+
+A 배열에서 작은수, B배열에서 큰수끼리 곱해주는것이 solution 
+
+def solution(A,B):  
+    A = sorted(A)
+    B = sorted(B, reverse=True) 
+    result = sum([a*b for a, b in zip(A,B)])
+    return min(result)
+
         
     
 

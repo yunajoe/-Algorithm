@@ -1,0 +1,15 @@
+def solution(s):
+    figure = "()"
+    length = len(s) // 2
+    num = 0 
+    while num != length:
+        s = s.replace(figure, "")
+        num += 1
+    if len(s) == 0:
+        return True 
+    return False 
+    
+    
+정확성: 69.5
+효율성: 0.0
+합계: 69.5 / 100.0

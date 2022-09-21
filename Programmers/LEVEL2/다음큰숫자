@@ -1,0 +1,17 @@
+
+def solution(n):
+    binaryNum = bin(n) 
+    Num = binaryNum[2:]
+    one_count = Num.count("1")
+    idx = 1  
+    answer = 0 
+    while True:
+        binaryNumNext = bin(n+idx)
+        Num_Next = binaryNumNext[2:]
+        one_count_next = Num_Next.count("1")
+        if one_count == one_count_next:
+            answer += n + idx 
+            break    
+        idx += 1              
+        
+    return answer

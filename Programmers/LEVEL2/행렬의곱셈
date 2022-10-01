@@ -1,3 +1,28 @@
+# 1st solution  
 def solution(arr1, arr2):
-    answer = [len(arr2[0]) * [0] for _ in range(len(arr1))]
-    return answer 
+    answer = [[0 for _ in range(len(arr2[0]))] for _ in range(len(arr1))]
+    for i in range(len(arr1)):  # iterate through rows of arr1
+        for j in range(len(arr2[0])): # iterate through columns of arr2
+            for k in range(len(arr2)): # iterate through rows of arr
+                answer[i][j] += arr1[i][k]  * arr2[k][j]                  
+    return answer
+    
+    
+# 2nd solution 
+def solution(arr1, arr2): 
+    final = []
+    for x_row in arr1: 
+        answer = []
+        for y_col in zip(*arr2):
+            inner = []
+            for x, y  in zip(x_row, y_col):
+                inner.append(x*y)
+            answer.append(sum(inner))
+        final.append(answer)
+    return final
+    
+# list comprehension 
+def solution(arr1, arr2):  
+    return [[sum(x*y for x, y in zip(x_row, y_col)) for y_col in zip(*arr2)] for x_row in arr1]
+    
+    

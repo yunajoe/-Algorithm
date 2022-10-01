@@ -1,0 +1,20 @@
+1. 최댓값과 최솟값
+# 1st 
+def solution(s):
+    answer = '' 
+    min_num, max_num = min(s.split()), max(s.split())
+    if int(min_num) and int(max_num) >=0:
+        return min_num + " " + max_num
+    else:
+        return max_num + " " + min_num
+        
+정확성: 16.7
+합계: 16.7 / 100.0          
+= > s.split()하고 안에 요소들을 int로 바꿔주지 않았기 때문에 s = "-1 10 12 4"의 max 값의 경우 4가 나옴
+ 
+# 2nd 
+def solution(s):
+    answer = ''
+    s = list(map(int,s.split()))
+    min_num, max_num = min(s), max(s)
+    return str(min_num) + ' ' + str(max_num)

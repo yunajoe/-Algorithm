@@ -1,0 +1,25 @@
+def solution(clothes):
+    dic= dict()
+    for cloth in range(len(clothes)):
+        if clothes[cloth][1] not in dic:
+            dic[clothes[cloth][1]] = [clothes[cloth][0]]
+        else:
+            dic[clothes[cloth][1]].append(clothes[cloth][0])    
+            
+    val = len([item for values in dic.values() for item in values])
+    mul = 1
+    for v in dic.values():
+        mul = mul * len(v)
+    if len(dic.keys()) == 1:
+        return val 
+    else:
+        return mul + val
+
+정확성: 28.6
+합계: 28.6 / 100.0
+ 
+ 
+    
+   
+ 
+        

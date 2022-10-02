@@ -21,3 +21,29 @@ def solution(s):
     
 정확성: 100.0
 합계: 100.0 / 100.0
+
+
+
+=============================================================================
+2. JadenCase 문자열 만들기
+'''
+s.split() vs s.split(" ")
+ex) s = "  3people unFollowed me" 
+s.split() 는 => ['3people', 'unFollowed', 'me']
+s.split(" ")는 => ['', '', '3people', 'unFollowed', 'me']   
+'''
+
+# 1st 
+def solution(s):
+    s = s.split(" ")
+    return " ".join([strs[0].upper()+strs[1:].lower() if len(strs) > 0 else strs for strs in s])
+    
+
+# 다른사람풀이 
+def solution(s):
+    s = s.split(" ")
+    for i in range(len(s)):
+        s[i] = s[i][:1].upper() + s[i][1:].lower()  # 여기서 s[i][0]하면은 string index out of range 오류남
+    return ' '.join(s)
+    
+    

@@ -26,3 +26,25 @@ def solution(phone_book):
 정확성: 58.3
 효율성: 12.5
 합계: 70.8 / 100.0
+
+
+# 3rd
+# phone_book = ["934793", "34", "44", "9347"] 경우일때도 고려해서? (즉, 접수사로 지정한 것이 문자열의 앞에 아닌 중간에 있을수도 있어서) 
+
+
+def solution(phone_book):
+    answer = True
+    phone_book.sort(key=lambda x: len(x))
+    prefix = phone_book[0]
+    prefix_num = len(prefix)
+
+    for ele in range(len(phone_book)):
+        if ele == 0:
+            continue
+        elif prefix in phone_book[ele][:prefix_num]:
+            return False
+    return True
+    
+정확성: 70.8
+효율성: 12.5
+합계: 83.3 / 100.0

@@ -47,4 +47,24 @@ def solution(phone_book):
     
 정확성: 70.8
 효율성: 12.5
-합계: 83.3 / 100.0
+합계: 83.3 / 100.0   
+
+
+
+# 4th (using hashmap) 
+def solution(phone_book):
+    hash_map = {}
+    answer = True
+    for phone_number in phone_book:
+        hash_map[phone_number] = 1  #  {"119":1,"97674223":1,"1195524421":1}
+    
+    for phone_number in phone_book:
+        prefix = ""
+        for number in phone_number:
+            prefix += number 
+            if prefix in hash_map and prefix != phone_number:  # 자기와 똑같은 것은 제외
+                answer = False
+    return answer
+        
+                
+                

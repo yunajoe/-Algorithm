@@ -1,0 +1,20 @@
+def solution(citations):
+    answer = 0
+    citations.sort()    
+    result = []
+    for i in range(len(citations)):
+        cited_number = citations[i]
+        cited_idx = citations.index(cited_number)
+        cited_report = citations[cited_idx:]
+        res_report = citations[:cited_idx]         
+        if cited_number <= len(cited_report):
+            result.append(cited_number)
+    return max(result)
+    
+    
+정확성: 12.5
+합계: 12.5 / 100.0
+            
+
+            
+    

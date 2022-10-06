@@ -1,0 +1,22 @@
+from itertools import permutations
+
+
+def solution(babbling):
+    all_number_of_cases = []
+    lis = ["aya", "ye", "woo", "ma"]  
+    for i in range(1,len(lis)+1):      
+        permute = permutations(lis,i)
+        for char in list(permute):
+            all_number_of_cases.append("".join(char))
+    all_number_of_cases.sort()
+    babbling.sort()
+    answer = 0 
+    for i in range(len(all_number_of_cases)):
+        for j in range(len(babbling)):
+            if all_number_of_cases[i] == babbling[j]:
+                answer += 1               
+    return answer
+                
+        
+  
+

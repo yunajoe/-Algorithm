@@ -1,0 +1,19 @@
+# 자가진단2
+- 50 이하의 자연수 N을 입력받아 재귀함수를 이용하여 N부터 1까지를 차례대로 출력
+
+def count_down(num):
+    if num > 0:
+        print(num, end=" ")
+        return count_down(num-1)
+        
+or 
+
+def count_down(num):
+    print(num, end=" ")
+    next = num - 1
+    if next > 0:
+        count_down(next)
+        
+# 자가진단3  
+- 자연수 N을 입력받아 재귀함수를 이용하여 1부터 N까지의 합을 구하는 프로그램을 작성
+

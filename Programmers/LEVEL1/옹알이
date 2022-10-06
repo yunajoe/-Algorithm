@@ -16,6 +16,10 @@ def solution(babbling):
             if all_number_of_cases[i] == babbling[j]:
                 answer += 1               
     return answer
+    
+    
+정확성: 87.5
+합계: 87.5 / 100.0
                 
         
   

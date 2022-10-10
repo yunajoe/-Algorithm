@@ -1,0 +1,16 @@
+days_list = ["Sun", "Mon","Tue", "Wed", "Thurs", "Fri", "Sat"] 
+month_list = [31,28,31,30,31,30,31,31,30,31, 30,31]    
+
+
+
+def func(month, day):
+    total = 0 
+    for i in range(0,month-1):  # month가 3월이라고 하면은 1,2월까지의 합을 구해야 한다 
+        total += month_list[i]  # 그런다음 day를 플러스로 나중에 더해주면 원하는 날까지의 day합이 구해진다 
+    Day = (total + day) % 7 
+    return days_list[Day]
+
+
+
+month, day = map(int, input().split())
+func(month,day)

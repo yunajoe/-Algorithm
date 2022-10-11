@@ -15,3 +15,23 @@ def solution(n):
         idx += 1              
         
     return answer
+ ========================================
+ 
+cnt = 0 
+def solution(n):    
+    if n > 1:
+        solution(n//2)
+    res = n%2
+    if res == 1:
+        global cnt 
+        cnt = cnt + 1
+    return cnt
+        
+def func(n):     
+    number = n + 1
+    while True:
+        result = solution(number)
+        if result == solution(n):
+            print(number)
+        break   
+func(15)

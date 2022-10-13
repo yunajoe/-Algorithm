@@ -1,0 +1,17 @@
+# 순서가 중요하지 않다 => 즉,서로 다른 인덱스만을 골고름 
+def is_prime(number): 
+    for i in range(2,number//2+1):
+        if number % i == 0: # 소수가 아니다! (약수가있으니까)
+            return False  
+    # else를 하지 않는 이유는 첫번째 i로 number를 나눴을 때 !=0 인경우(소수로판명), 하지만 두번째 i로 number를 나눴을 때  i ==0(소수아님으로판명)있을 수도 있기 때문에 for문 다 돌고나서 해줌
+    return True # 소수다!  
+        
+def solution(nums):  
+    result = []
+    for i in range(len(nums)):
+        for j in range(i+1,len(nums)):
+            for k in range(j+1, len(nums)):
+                result.append(nums[i] + nums[j] + nums[k])   
+    # True 는 1, False는 0
+    return sum(list(map(is_prime, result)))
+                

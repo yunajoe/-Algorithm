@@ -1,0 +1,24 @@
+
+def solution(fees, records):
+    result = {}
+    for record in records:
+        car_number = record.split()[1]
+        if car_number not in result:
+            result[car_number] = [record.split()[0]]
+        else:
+            result[car_number].append(record.split()[0])    
+    last_time = 23*60 + 59
+    for k, v in result.items():
+        for idx in range(len(v)-1):
+            hour = int(v[idx].split(":")[0])
+            minutes = int(v[idx].split(":")[1])
+            print(k, hour*60+minutes, last_time)
+            
+            
+# 음..생각이 안난다...
+            
+            
+            
+            
+
+            

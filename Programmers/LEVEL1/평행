@@ -1,0 +1,18 @@
+def solution(dots):
+    answer = 0       
+    idx_result = []
+    for i in range(len(dots)):
+        for j in range(1,len(dots)):
+            if  i != 0:
+                break             
+            first_line_index =[i,j]
+            second_line_index = [idx for idx, element in enumerate(dots) if idx not in first_line_index]
+            idx_result.append(first_line_index + second_line_index)
+    for i in range(len(idx_result)):  
+        final = [dots[j] for j in idx_result[i]]
+        first_line_slope, seond_line_slope = final[0][1] - final[1][1]//final[0][0] - final[1][0], final[2][1] - final[3][1]//final[2][0] - final[3][0]
+        if first_line_slope == seond_line_slope:
+            return 1
+        return 0
+
+        

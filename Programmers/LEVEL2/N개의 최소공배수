@@ -17,7 +17,7 @@ def solution(arr):
         for num in range(2,number//2+1):            
             if func(num):
                 if number % num == 0:
-                    print(number, num)
+                    print(number, num)  # array에 있는 number들에 대해 나눠지는 소인수만 구한상태
     
 
             

@@ -41,5 +41,22 @@ def solution(arr):
         arr.append(lcm(a, b))
     return int(arr[0])
             
- 
-        
+ ===========================================================================           
+
+def gcd(a, b):  # 유클리드 호제법 
+    mod = a % b
+    while mod > 0:
+        a = b
+        b = mod
+        mod = a % b
+    return b  
+
+def lcm(a,b):
+    return (a * b) // gcd(a,b)  
+
+def solution(arr):
+    while len(arr) > 1:
+        a = arr.pop()
+        b = arr.pop()
+        arr.append(lcm(a, b))
+    return int(arr[0])

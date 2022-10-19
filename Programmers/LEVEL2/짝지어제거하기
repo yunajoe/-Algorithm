@@ -13,6 +13,13 @@ def solution(s):
                         new_list.append(s_list[idx])
                 s_list = new_list
             return 0
-
-                       
+=============================================
+def solution(s):
+    answer = -1
+    s = list(s)
+    while len(s) > 0:         
+        num1 = s.pop()
+        num2 = s.pop()
+        if num1 == num2:
+            s = s
         

@@ -1,1 +1,19 @@
+def solution(number, money):
+    result = []
+    for i in range(number):
+        result.append(int(input()))
+    
+    cnt = 0 
+    
+    for coin in sorted(result, reverse=True):
+        cnt += money // coin 
+        money = money % coin
+        
+    return cnt
+        
+        
+    
+    
 
+a, b = map(int, input().split())
+print(solution(a,b))

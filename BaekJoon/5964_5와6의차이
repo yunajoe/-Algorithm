@@ -1,0 +1,26 @@
+def solution(a,b):
+    max_a = int(float(str(a).replace('5','6')))
+    max_b = int(float(str(b).replace('5','6')))
+    max_number = max_a + max_b
+
+    min_a = int(float(str(a).replace('6','5')))
+    min_b = int(float(str(b).replace('6','5')))
+    min_number = min_a+ min_b
+    return f"{min_number} {max_number}"
+
+a, b = map(int, input().split())
+print(solution(a,b))
+
+
+# 다른풀이 
+def between_5_to_6(A, B):
+    min_num = int(A.replace('6', '5')) + int(B.replace('6', '5'))
+    max_num = int(A.replace('5', '6')) + int(B.replace('5', '6'))
+    
+    return f"{min_num} {max_num}"
+
+
+if __name__ == "__main__":
+    num1, num2 = input().split()
+    
+    print(between_5_to_6(num1, num2))

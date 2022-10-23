@@ -15,9 +15,16 @@ def solution(cacheSize, cities):
         else:
             cache.pop(cache.index(citi))
             cache.append(citi)
-            answer += 1        
+            answer += 1         
     return answer
     
     
 정확성: 90.0
 합계: 90.0 / 100.0
+
+# 만약 answer += 1를 아래처럼 하면은?! => citi가 cache안에 있든 없든 +1를 다 해주게 되어 있다 . citi가 cache안에 있을 떄만 해 주고 싶을 때는 else안으로 해 주면 된다
+
+else:
+    cache.pop(cache.index(citi))
+    cache.append(citi)
+answer += 1     

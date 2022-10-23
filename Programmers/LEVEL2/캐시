@@ -1,1 +1,23 @@
-
+def solution(cacheSize, cities):
+    answer = 0
+    cities = [citi.upper() for citi in cities]
+    cache =[]
+    for citi in cities:
+        if not citi in cache:
+            if len(cache) <cacheSize:
+                cache.append(citi)
+            elif cacheSize == 0 :
+                cache.append(citi)
+            else:
+                cache.pop(0)
+                cache.append(citi)
+            answer += 5
+        else:
+            cache.pop(cache.index(citi))
+            cache.append(citi)
+            answer += 1        
+    return answer
+    
+    
+정확성: 90.0
+합계: 90.0 / 100.0

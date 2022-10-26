@@ -1,1 +1,17 @@
-
+# 일이 들어가는 횟수를 구하는 함수
+def func(n):
+    lis = [1]
+    lis2 = [2]
+    for i in range(1,n):
+        res = n-i
+        if res % 2 == 0: # 1을 i개 만큼 쓸 수 있다는 이야기 
+            result = lis*i
+            counted_two = (n-sum(result)) // 2
+            result2 = counted_two * lis2
+            final = result2 + result
+            print(final)
+            
+          
+            
+        
+        

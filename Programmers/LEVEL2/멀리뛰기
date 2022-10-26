@@ -30,7 +30,8 @@ def solution(n):
         answer += 1
     return answer
         
-        
+정확성: 12.5
+합계: 12.5 / 100.0
         
 
           

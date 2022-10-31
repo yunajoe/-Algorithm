@@ -22,6 +22,28 @@ for _ in range(num):
     
  # Runtime error
 
+===============================================================
+
+dp_table = []
+dp_table.append(1) # n=1일때 
+dp_table.append(2) # n=2일때
+dp_table.append(4)
+
+def solution(n):
+    if n <=3:
+        return dp_table[n-1]
+    
+    # dp[3] = dp[2] + dp[1] + dp[0]    # n=4일때
+    # dp[4] = dp[3] + dp[2] + dp[1]    # n=5일때 
+
+    for i in range(3,n):
+        dp_table.append(dp_table[i-1] + dp_table[i-2] + dp_table[i-3])
+    return dp_table[n-1]
+    
+
+n = int(input()) 
+for _ in range(n):
+    print(solution(int(input())))
 
 
 참고: https://hyun-am-coding.tistory.com/entry/DP-DP-%EA%B0%84%EB%8B%A8%ED%95%9C-%EB%AC%B8%EC%A0%9C-%EB%B0%B1%EC%A4%80-1-2-3-%EB%8D%94%ED%95%98%EA%B8%B0-%ED%92%80%EA%B8%B0

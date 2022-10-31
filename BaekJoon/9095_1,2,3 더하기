@@ -45,5 +45,31 @@ n = int(input())
 for _ in range(n):
     print(solution(int(input())))
 
+==================================================================
 
+
+n = int(input())
+answer = []
+
+for i in range(n):
+    number = int(input())
+    
+    if number == 1:
+        answer.append(1)
+    elif number == 2:
+        answer.append(2)
+    elif number == 3:
+        answer.append(4)
+    else:
+        ans = [0] * number
+        ans[0] = 1
+        ans[1] = 2
+        ans[2] = 4
+        
+        for i in range(3, number):
+            ans[i] = ans[i-1] + ans[i-2] + ans[i-3]
+        answer.append(ans[i])
+        
+for answer in answer:
+    print(answer)
 참고: https://hyun-am-coding.tistory.com/entry/DP-DP-%EA%B0%84%EB%8B%A8%ED%95%9C-%EB%AC%B8%EC%A0%9C-%EB%B0%B1%EC%A4%80-1-2-3-%EB%8D%94%ED%95%98%EA%B8%B0-%ED%92%80%EA%B8%B0

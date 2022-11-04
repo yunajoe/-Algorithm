@@ -49,3 +49,5 @@ if __name__ == "__main__":
     print(recursive_num+1, dynamic)
 
 
+// 시간초과 발생
+

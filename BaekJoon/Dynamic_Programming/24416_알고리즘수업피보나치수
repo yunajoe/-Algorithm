@@ -14,4 +14,38 @@ def fib2(n):
 
  
 n = int(input())
-print(fib(n), fib2(n))
+print(fib(n), fib2(n)) 
+
+// 시간초과 발생 
+
+=========================================================
+
+
+# 피보나치 수열 => 1,1,2,3,5,8,13 21... 
+
+# 재귀함수로 만들기 
+def fibo_recursive(n):
+    global recursive_num
+    recursive_num += 1
+    if n == 1 or n == 2:
+        recursive_num -= 1  # 반복은 3부터 시작이니까 1 또는 2일 때는 그 숫자를 지워준다
+        return 1 
+    return fibo_recursive(n-1) + fibo_recursive(n-2)
+
+# Dynamic programming으로 만들기( bottom-up 방식 => tabulation 방식)
+def fibo_dynamic(n):
+    answer = 0 
+    fib_table = [0,1,1]
+    for i in range(3,n+1):
+        fib_table.append(fib_table[i-1] + fib_table[i-2])
+        answer += 1
+    return answer      
+
+if __name__ == "__main__":
+    n = int(input())
+    recursive_num = 0           
+    recursive = fibo_recursive(n)    
+    dynamic = fibo_dynamic(n)      
+    print(recursive_num+1, dynamic)
+
+

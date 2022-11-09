@@ -22,3 +22,6 @@ if __name__ == "__main__":
     n = int(input())
     money = list(map(int, input().split()))
     print(solution(n, money))
+
+
+# 틀림 

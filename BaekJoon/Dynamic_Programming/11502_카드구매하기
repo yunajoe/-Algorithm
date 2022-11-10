@@ -1,7 +1,5 @@
 
 
-# n보다 money_list2의 len()이 큰 경우와, 작은 경우로 나뉠 수 있다 
-
 def solution(n, money_list):
     profit_table = []
     for i in range(n):

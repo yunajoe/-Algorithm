@@ -113,7 +113,7 @@ if __name__ == "__main__":
     price_lis = list(map(int, input().split()))
     print(function(price_lis, n))
    
- # 
+ # 틀림
 
         
     

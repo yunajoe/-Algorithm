@@ -114,6 +114,28 @@ if __name__ == "__main__":
     print(function(price_lis, n))
    
  # 틀림
+ 
+ =================================================================== 
+ cardNum = int(input())
+profit_table = [0]*(cardNum+1)
+cardPrice = [0]+list(map(int, input().split()))
+# print(cardPrice)
+
+
+def solution():
+    # profit 0개는 항상 0... 1개는 price의 1개와 같기 떄문에 아래처럼 
+    # 2개부터 경우의 수가 생긴다 
+    profit_table[0], profit_table[1] = 0, cardPrice[1]
+    for i in range(2, cardNum+1):
+        for j in range(1, i+1):             
+            # j는 항상 i보다 작거나 같다. 따라서 i-j보다 작거나 같다.
+            # profit_table보다 card_price으 값이 먼저 있어야 profit이 계산이 되기 때문에 card_price의 j(작은값)을 주고 
+            profit_table[i] = max(profit_table[i], profit_table[i-j] + cardPrice[j]) 
+    return profit_table[cardNum]   
+        
+        
+print(solution())
+        
 
         
     

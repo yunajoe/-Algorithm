@@ -20,7 +20,7 @@ def solution(arr):
     return stack
 
 ==========================================================================================
-
+# 시도 1
 from collections import deque
 def solution(arr):
     queue = deque()
@@ -33,4 +33,24 @@ def solution(arr):
         if i < len(arr):
             break
     return queue
+        
+# 시도 2
+def solution(arr):
+    idx = 0     
+    result = []
+    length = len(arr)
+    while len(arr) != 0: 
+        if len(result) == 0:
+            num = arr.pop(idx)
+            result.append(num)
+        else:
+            if result[-1] == arr[idx]:
+                idx += 1
+                if idx >= len(arr):
+                    break
+            else:
+                result.append(arr.pop(idx))
+    return result
+            
+ 
         

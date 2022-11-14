@@ -21,3 +21,16 @@ def solution(arr):
 
 ==========================================================================================
 
+from collections import deque
+def solution(arr):
+    queue = deque()
+    # [실행] 버튼을 누르면 출력 값을 볼 수 있습니다.
+    for i in range(len(arr)):
+        queue.append(arr.pop(i))
+        if queue[-1] == arr[i]:
+            continue
+        queue.append(arr.pop(i))
+        if i < len(arr):
+            break
+    return queue
+        

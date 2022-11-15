@@ -36,8 +36,23 @@ def solution(s):
                 
  ==================================================================================
                 
-                
-                
+def solution(strs):
+    result = []
+    for i in range(len(strs)):
+        if strs[i] == "(":
+            result.append(i) 
+        elif strs[i] == ")":
+            if len(result) == 0:  # )에 처음 시작했다는 말 
+                return False 
+            result.pop(0)
+    if len(result) == 0:
+        return True
+    return False
+            
+
+정확성: 69.5
+효율성: 0.0
+합계: 69.5 / 100.0
                     
             
             

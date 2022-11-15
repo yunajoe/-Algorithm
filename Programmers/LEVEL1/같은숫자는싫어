@@ -51,6 +51,35 @@ def solution(arr):
             else:
                 result.append(arr.pop(idx))
     return result
-            
+    
+    
+    
+===================================================================
+   
+    
+def solution(arr):
+    idx = 0 
+    result = []
+    while len(arr) != 0:
+        if len(result) == 0:
+            result.append(arr[idx])    
+            arr.pop(idx)    
+        else:
+            if result[-1] ==  arr[idx]:
+                arr.pop(idx)
+                
+            else:
+                result.append(arr[idx])
+                arr.pop(idx)
+    return arr
+    
+채점 결과
+정확성: 71.9
+효율성: 0.0
+합계: 71.9 / 100.0
+    
+    
+    
+
  
         

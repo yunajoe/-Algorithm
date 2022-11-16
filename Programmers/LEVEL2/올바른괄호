@@ -52,7 +52,34 @@ def solution(strs):
 
 정확성: 69.5
 효율성: 0.0
-합계: 69.5 / 100.0
+합계: 69.5 / 100.
+
+
+def solution(strs):
+    result = []
+    for i in range(len(strs)):
+        if strs[i] == "(":
+            result.append(i) 
+        elif strs[i] == ")":
+            if len(result) != 0:  
+                result.pop()
+            else:
+                return False 
+           
+
+    return False if len(result) else True
+
+정확성: 69.5
+효율성: 30.5
+합계: 100.0 / 100.0
+    
+    
+
+            
+    
+    
+
+
                     
             
             

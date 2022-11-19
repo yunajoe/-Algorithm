@@ -21,8 +21,49 @@ def solution(progresses, speeds):
                 
     return answer
 
+================================================================
+
+import math
+def solution(progresses, speeds):
+    answer = []
+    total = len(progresses) * [100]     
+    result = [total[i] - progresses[i] for i in range(len(total))] 
+    Days = [math.ceil(r/p) for r, p in zip(result, speeds)]
+    idx = 0 
+    answer = []
+    while len(Days) !=0:
+        if len(answer) == 0:
+            answer.append(Days[idx])     
+            Days.pop(idx)
+        else:
+            ele = Days[idx]
+            if answer[-1] >= ele:
+                answer.append(answer[-1])
+                Days.pop(idx)
+            else:
+                answer.append(ele)
+                Days.pop(idx)  
+    idx2 = 0
+    result = [1]       
+    while idx2 != len(answer)-1:
+        if answer[idx2] == answer[idx2+1]:
+            result[idx2] += 1                    
+            idx2 += 1
+        else:
+            result.append(1)
+            idx2 += 1
+    return result
             
-            
+        
+
+    
+    
+
+
+
+      
+      
+  
             
         
         

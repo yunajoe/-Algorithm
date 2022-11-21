@@ -1,0 +1,36 @@
+truck_weights = [7,4,5,6]
+bridge_length = 2 
+weight = 10  # minimum weight 
+
+
+time = 0 
+passed_trucks = []
+while len(truck_weights) != 0:
+    idx = 1 
+    total_weight = 0 
+    ing_trucks = []
+   
+    while idx != bridge_length+1:
+        total_weight += sum(truck_weights[:idx])
+        if total_weight > weight:  #  총무게가 최소의 min보다 더 많이 나간다면?!
+            break 
+        else:
+            idx += 1 
+            total_weight= 0
+            
+    num = idx-1
+    ing_range = len(truck_weights[:num])   
+    for i in range(ing_range):
+        ing_trucks.append(truck_weights[i])
+        
+    while True: 
+       
+        truck_number = truck_weights.pop(0)
+        if ing_trucks[-1] == truck_number:
+            break
+        
+    time += len(ing_trucks)
+    for number in ing_trucks:
+        passed_trucks.append(number)
+    
+    

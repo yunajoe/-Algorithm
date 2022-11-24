@@ -1,0 +1,15 @@
+computer = int(input())
+line = int(input())
+
+# [[], [], []]  
+lis = [[] for _ in range(computer+1)]
+for i in range(computer):
+    if i ==0:
+        continue
+    else:
+        node, num = map(int, input().split())
+        lis[node].append(num)
+        lis[num].append(node)
+        
+# print(lis)   [[], [2,5], [1,3,5],[2], [7],  [1,2,6], [5], [4]]  ==> 인접한 노드끼리 연결이 된다 
+

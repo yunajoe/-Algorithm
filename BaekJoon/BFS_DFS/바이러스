@@ -23,6 +23,10 @@ def dfs(graph, node, visited):
     return sum(visited)-1  
             
 print(dfs(graph, 1, visited))   
+
+# 실패 
+
+
     
     
     

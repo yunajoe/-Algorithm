@@ -1,0 +1,26 @@
+
+node, line, start = map(int, input().split())
+# [[], [2, 3, 4], [1, 4], [1, 4], [1, 2, 3]]
+graph = [[] for _ in range(node+1)]
+visited = [False]  * line   
+
+for i in range(line):
+    n1, n2 = map(int, input().split())
+    graph[n1].append(n2)
+    graph[n2].append(n1)
+
+
+def dfs(graph, visited, num):
+    visited[num] = True
+    print(num, end=" ")
+
+    for i in graph[num]:
+        if not visited[i]:
+            dfs(graph, visited, i)
+
+dfs(graph, visited, 1)
+
+    
+    
+
+    

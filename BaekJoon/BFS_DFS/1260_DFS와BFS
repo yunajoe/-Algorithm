@@ -1,26 +1,51 @@
+# DFS 
 
-node, line, start = map(int, input().split())
-# [[], [2, 3, 4], [1, 4], [1, 4], [1, 2, 3]]
+
+node, line, number = map(int, input().split())
+
+# [[],[2,3,4],[1,4],[1,4],[1,2,3]]
 graph = [[] for _ in range(node+1)]
-visited = [False]  * line   
-
+visited = [False] * (node+1)
 for i in range(line):
     n1, n2 = map(int, input().split())
     graph[n1].append(n2)
     graph[n2].append(n1)
+    
+def dfs(graph, number, visited):
+    visited[number] = True
+    print(number, end= " ")
+    for i in graph[number]:
+        if not visited[i]: # False이면
+            dfs(graph, i, visited)
 
 
-def dfs(graph, visited, num):
-    visited[num] = True
-    print(num, end=" ")
 
-    for i in graph[num]:
-        if not visited[i]:
-            dfs(graph, visited, i)
 
-dfs(graph, visited, 1)
+            
+from collections import deque 
+def bfs(graph, node, visited):
+    queue = deque([node])  # node를 큐()에 넣는다
+    visited[node] = True  # 방문처리 
+
+    while queue: # queue에 하나라도 원소가 있으면 돌기 
+        ele = queue.popleft()
+        print(ele, end=" ")
+        for i in graph[ele]:
+            if not visited[i]:  # False이면은 
+                queue.append(i)  # que에 삽입 
+                visited[i] = True
+
+   
+
+
+
+
+
+
 
     
+    
+
     
 
     

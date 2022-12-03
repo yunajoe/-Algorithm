@@ -1,38 +1,22 @@
-# DFS 
+
+from collections import deque
 
 
-node, line, number = map(int, input().split())
+def DFS(graph, visited, start_node):
+    stack = deque()
+    visited[start_node] = 1   # 스택에 넣는다는 표시 
+    stack.append(start_node)
 
-# [[],[2,3,4],[1,4],[1,4],[1,2,3]]
-graph = [[] for _ in range(node+1)]
-visited = [False] * (node+1)
-for i in range(line):
-    n1, n2 = map(int, input().split())
-    graph[n1].append(n2)
-    graph[n2].append(n1)
-    
-def dfs(graph, number, visited):
-    visited[number] = True
-    print(number, end= " ")
-    for i in graph[number]:
-        if not visited[i]: # False이면
-            dfs(graph, i, visited)
+    while stack:
+        current_node = stack.pop()  
+        print(current_node)
+        visited[current_node] = True   # 현재 노드를 방문 처리 
+        
+        for n in graphs[current_node]:
+            if not visited[n]:
+                DFS(graph, visited, n)
 
-
-=====================================================================
-
-# bfs는 first-in, first-out (큐)         
-
-
-node, line , start_node = map(int, input().split())
-graphs = [[] for _ in range(node+1)] 
-visited = [False] * (line+1)
-
-for i in range(len(graphs)):
-    graphs[i].sort()
-
-
-def bfs(graph, visited, start_node):
+def BFS(graph, visited, start_node):
     queue = deque()
     queue.append(start_node)  # 노드를 qeue에 넣어준다 
     visited[start_node] = True 
@@ -46,17 +30,33 @@ def bfs(graph, visited, start_node):
             if not visited[n]:
                 queue.append(n)
                 visited[n] = True
+      
+                
+        
 
+if __name__ == "__main__":
+    node, line , start_node = map(int, input().split())
+    graphs = [[] for _ in range(node+1)] 
 
-bfs(graphs, visited, start_node)
+    for _ in range(line):
+        n1, n2 = map(int, input().split())
+        graphs[n1].append(n2)
+        graphs[n2].append(n2)
 
+    for i in range(len(graphs)):
+        graphs[i].sort()
 
-
-
+    
+    visited_dfs = [False] * (line+1)
+    DFS(graphs, visited_dfs, start_node)
+    print()
+    visited_bfs = [False] * (line+1)
+    BFS(graphs, visited_bfs, start_node)
 
 
 
     
+
     
 
     

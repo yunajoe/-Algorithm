@@ -19,23 +19,36 @@ def dfs(graph, number, visited):
             dfs(graph, i, visited)
 
 
+=====================================================================
+
+# bfs는 first-in, first-out (큐)         
 
 
-            
-from collections import deque 
-def bfs(graph, node, visited):
-    queue = deque([node])  # node를 큐()에 넣는다
-    visited[node] = True  # 방문처리 
+node, line , start_node = map(int, input().split())
+graphs = [[] for _ in range(node+1)] 
+visited = [False] * (line+1)
 
-    while queue: # queue에 하나라도 원소가 있으면 돌기 
-        ele = queue.popleft()
-        print(ele, end=" ")
-        for i in graph[ele]:
-            if not visited[i]:  # False이면은 
-                queue.append(i)  # que에 삽입 
-                visited[i] = True
+for i in range(len(graphs)):
+    graphs[i].sort()
 
-   
+
+def bfs(graph, visited, start_node):
+    queue = deque()
+    queue.append(start_node)  # 노드를 qeue에 넣어준다 
+    visited[start_node] = True 
+
+
+    while queue:
+        current_node = queue.popleft()
+        print(current_node, end=" ")
+
+        for n in graph[current_node]:
+            if not visited[n]:
+                queue.append(n)
+                visited[n] = True
+
+
+bfs(graphs, visited, start_node)
 
 
 

@@ -19,3 +19,12 @@ for i in order_line[:-1]:
 
 # 런타임 오류
 
+n = int(input())
+numbers= list(map(int, input().split()))
+answer = []
+for i in range(n):
+    studentNumber = i+1
+    answer.insert(i-numbers[i] , studentNumber)
+
+for i in answer:
+    print(i, end=" ")

@@ -1,0 +1,16 @@
+n = 5
+numbers= [0, 1, 1, 3, 2]  
+order_line = [0] * n 
+
+
+# 뽑은 숫자, number[i]는 이동하는 거리 
+for i in range(len(numbers)): 
+    student_number = i + 1  # 1,2,3,4,5  
+    order_line[i] = student_number
+    if i>= 1: # 어차피 처음은 안 바뀔꺼니까 >=1 부터 바뀐다
+        new_loc = student_number - numbers[i]-1   # new_loc위치로 student_number를 넣을것임
+        order_line.insert(new_loc, student_number)
+        order_line = order_line[:student_number+1]  # index로 들어갈 최소한의 공간만 남겨둠
+ 
+for i in order_line[:-1]:
+    print(i, end=" ")

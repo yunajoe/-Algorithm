@@ -53,10 +53,6 @@ if __name__ == "__main__":
     visited_bfs = [False] * (line+1)
     BFS(graphs, visited_bfs, start_node)
 
-
-
-    
-
     
 
     

@@ -1,0 +1,78 @@
+# DFS 
+from collections import deque
+
+computer = int(input())
+line = int(input())
+graph = [[] for _ in range(computer+1)]
+visited = [False] * (computer+1)
+
+for i in range(line):
+    n1, n2 = map(int, input().split())
+    graph[n1].append(n2)
+    graph[n2].append(n1)
+
+# print(graph) [[], [2, 5], [1, 3, 5], [2], [7], [1, 2, 6], [5], [4]]
+
+
+# DFS는 Last-In, Last-Out 즉 스택 base를 따른다 
+def DFS(graph, visited, start_node):
+    stack = deque()
+    stack.append(start_node)
+    visited[start_node] = True 
+
+
+    while stack:
+        current_node = stack.pop() 
+        for i in graph[current_node]:
+            if not visited[i]:
+                DFS(graph, visited,i)
+
+    return sum(visited)-1
+
+
+
+print(DFS(graph, visited, 1))
+
+
+===========================================================
+
+# BFS
+
+from collections import deque
+
+computer = int(input())
+line = int(input())
+graph = [[] for _ in range(computer+1)]  
+visited = [False] * (computer+1)
+
+for i in range(line):
+    node, num = map(int, input().split())
+    graph[node] += [num]
+    graph[num] += [node]
+    
+
+
+def bfs(graph, node, visited):
+    queue = deque([node])   # node를 큐에 넣고 
+    visited[node] = True   # 큐에 넣어진 노드는 True(방문) 처리 
+    
+    # 큐가 완전히 빌 때까지 반복      
+    while queue:
+        v = queue.popleft()
+        for i in graph[v]:
+            if not visited[i]:  # false 이면은, 방문처리가 안 되어 있으면 
+                queue.append(i) # 큐에 넣고 
+                visited[i] = True # 방문 처리 
+                
+    return sum(visited)-1
+                
+
+print(bfs(graph, 1, visited))             
+        
+        
+        
+
+    
+    
+    
+    

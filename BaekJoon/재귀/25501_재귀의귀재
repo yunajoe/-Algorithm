@@ -1,11 +1,21 @@
-
+cnt = 0 
 
 def recursion(strs, start, end):
-    if start>=end: return 1
-    elif strs[start] != start[end]: return 0
+    global cnt
+    cnt += 1
+    if start >= end: return True
+    elif strs[start] != strs[end]: return False
     else: return recursion(strs, start+1, end-1)
+     
+def isPal(strs): 
+    if recursion(strs,0, len(strs)-1):
+        return f"1 {cnt}"
+    else:
+        return f"0 {cnt}"  
 
-def isPalindrome(strs):
-    return recursion(strs, 0, len(strs)-1)
+for i in range(int(input())):
+    answer = isPal(input())
+    print(answer)
 
 
+#  실패!

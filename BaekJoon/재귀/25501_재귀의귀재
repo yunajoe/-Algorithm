@@ -1,0 +1,11 @@
+
+
+def recursion(strs, start, end):
+    if start>=end: return 1
+    elif strs[start] != start[end]: return 0
+    else: return recursion(strs, start+1, end-1)
+
+def isPalindrome(strs):
+    return recursion(strs, 0, len(strs)-1)
+
+

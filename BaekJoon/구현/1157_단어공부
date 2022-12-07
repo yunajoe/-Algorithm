@@ -1,0 +1,17 @@
+def sol(strs, dic={}):
+    words = list(strs.upper())
+    target_words = list(set(words)) 
+    for target in target_words:
+        dic[target] = words.count(target)     
+    max_key_list = [k for k, v in dic.items() if v ==max(dic.values())]
+
+    if len(max_key_list) >=2:
+        return "?"
+    return max_key_list[0]      
+
+
+
+if __name__ == "__main__":
+    strs = input()
+    print(sol(strs)) 
+

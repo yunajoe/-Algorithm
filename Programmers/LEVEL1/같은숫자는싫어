@@ -19,6 +19,19 @@ def solution(arr):
 정확성: 71.9
 효율성: 0.0
 합계: 71.9 / 100.0
+
+
+================================================
+
+stack 으로 구현
+
+def solution(arr):
+    stack = [] 
+    for num in arr:
+        if len(stack) > 0 and stack[-1] == num:
+            continue         
+        stack.append(num)      
+    return stack
     
     
     

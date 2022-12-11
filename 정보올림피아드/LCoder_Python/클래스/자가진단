@@ -1,0 +1,17 @@
+
+# 자가진단1
+
+class Info:
+  def __init__(self, name, school, grade):
+    self.name = name
+    self.school = school
+    self.grade = grade 
+
+
+  def __str__(self):
+    return f" Name: {self.name} \n School: {self.school} \n grade:{self.grade}"  
+
+
+name, school, grade = input().split()
+print(Info(name,school,grade))
+ 

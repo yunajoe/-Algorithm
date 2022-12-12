@@ -1,0 +1,12 @@
+def solution(prices):
+    queue  = [0] * len(prices)  # first in first out 
+    idx = 0
+    while prices:
+        for i in range(1,len(prices)):
+            if prices[0] <= prices[i]:
+                queue[idx] += 1
+        prices.pop(0)
+        idx += 1
+    return queue
+    
+# 실패

@@ -31,3 +31,25 @@ while len(truck_weights) != 0:
         passed_trucks.append(number)
     
     
+from collections import deque   
+
+def solution(bridge_length, weight, truck_weights):
+    queue = deque(truck_weights)
+    time = 0
+    passing_truck = []
+    while bridge_length !=0:
+        truck = queue.popleft()         
+        passing_truck.append(truck)
+        time += 1
+        bridge_length -= 1
+        if sum(passing_truck) < weight:
+            truck2 = queue.popleft()    
+            passing_truck.append(truck2)
+            if sum(passing_truck) < weight:   
+                time += 1
+                bridge_length -= 1  
+            else:
+                truck3 = passing_truck.pop()
+                queue.push(0)
+
+    return time 

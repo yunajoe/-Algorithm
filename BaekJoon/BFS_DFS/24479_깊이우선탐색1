@@ -26,7 +26,7 @@ def DFS(lines, visited, start):
 
 
 if __name__ == '__main__':
-    result = DFS(lines, visited, 1)
+    result = DFS(lines, visited, start)
     for i in range(1,len(result)):
         if result[i]:
             print(i)  

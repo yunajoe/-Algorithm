@@ -2,19 +2,6 @@
 from collections import deque
 
 
-def DFS(graph, visited, start_node):
-    stack = deque()
-    visited[start_node] = 1   # 스택에 넣는다는 표시 
-    stack.append(start_node)
-
-    while stack:
-        current_node = stack.pop()  
-        print(current_node)
-        visited[current_node] = True   # 현재 노드를 방문 처리 
-        
-        for n in graphs[current_node]:
-            if not visited[n]:
-                DFS(graph, visited, n)
 
 def BFS(graph, visited, start_node):
     queue = deque()

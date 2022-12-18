@@ -2,17 +2,18 @@
 from collections import deque
 
 def DFS(graph, visited, start_node): 
-    visited[v] = True
-    print(v)   
-    for i in graph[v]:
+
+    visited[start_node] = True
+    print(start_node, end=" ")   
+    for i in graph[start_node]:
         if not visited[i]:
             DFS(graph,visited,i)
+
 
 def BFS(graph, visited, start_node):
     queue = deque()
     queue.append(start_node)  # 노드를 qeue에 넣어준다 
-    visited[start_node] = True 
-
+    visited[start_node] = True  
 
     while queue:
         current_node = queue.popleft()
@@ -23,7 +24,49 @@ def BFS(graph, visited, start_node):
                 queue.append(n)
                 visited[n] = True
       
-                
+
+
+if __name__ == "__main__":
+    node, line, start_node = map(int, input().split())
+    graphs = [[] for _ in range(node+1)] 
+    for _ in range(line):             
+        n1, n2 = map(int, input().split())
+        graphs[n1].append(n2)
+        graphs[n2].append(n1)
+        
+    # 방문할 수 있는 정점이 여러 개인 경우에는 정점 번호가 작은 것을 먼저 방문
+    for graph in graphs:  # 오름차순 정렬 
+        graph.sort()  
+
+
+dfs_visited = [False] * (node+1)     
+bfs_visited = [False] * (node+1)     
+
+DFS(graphs, dfs_visited, start_node)
+print()
+BFS(graphs, bfs_visited, start_node)
+
+
+  
+  
+
+    
+
+    
+
+    
+
+
+  
+  
+
+    
+
+    
+
+    
+
+
         
 
 

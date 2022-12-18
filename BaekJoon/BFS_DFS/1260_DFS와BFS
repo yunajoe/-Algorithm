@@ -1,7 +1,12 @@
 
 from collections import deque
 
-
+def DFS(graph, visited, start_node): 
+    visited[v] = True
+    print(v)   
+    for i in graph[v]:
+        if not visited[i]:
+            DFS(graph,visited,i)
 
 def BFS(graph, visited, start_node):
     queue = deque()
@@ -21,24 +26,6 @@ def BFS(graph, visited, start_node):
                 
         
 
-if __name__ == "__main__":
-    node, line , start_node = map(int, input().split())
-    graphs = [[] for _ in range(node+1)] 
-
-    for _ in range(line):
-        n1, n2 = map(int, input().split())
-        graphs[n1].append(n2)
-        graphs[n2].append(n2)
-
-    for i in range(len(graphs)):
-        graphs[i].sort()
-
-    
-    visited_dfs = [False] * (line+1)
-    DFS(graphs, visited_dfs, start_node)
-    print()
-    visited_bfs = [False] * (line+1)
-    BFS(graphs, visited_bfs, start_node)
 
     
 

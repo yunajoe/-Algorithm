@@ -1,1 +1,73 @@
+# 일의 자리수가 바뀌는것이 5가지의 경우의 수!
+A
+AA
+AAA
+AAAA
+AAAAA
+AAAAE   ==> 6
+===============================
+
+A
+AA
+AAA
+AAAA
+
+AAAAA
+AAAAE
+AAAAI
+AAAAO
+AAAAU
+
+AAAEA
+AAAEE
+AAAEI
+AAAEO
+AAAEU
+
+AAEAA
+AAEAE
+AAEAI
+AAEAO
+AAEAU
+
+AAEEA
+AAEEE
+AAEEI
+AAEE
+
+===============================
+
+
+A = 1
+AA
+AAA
+AAAA
+AAAAA
+===============================
+
+E = 782
+EE
+EEE
+EEEE
+EEEEE
+===============================
+
+I  = 1563
+II
+III
+IIII
+IIIII
+===============================
+O =  2344
+OO
+OOO
+OOOO
+OOOOO
+===============================  
+U = 3125
+UU
+UUU
+UUUU
+UUUUU
+
 

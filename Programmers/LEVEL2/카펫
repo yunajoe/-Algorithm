@@ -51,7 +51,29 @@ def solution(brown, yellow):
 
   
 
-
+===========================================================
     
+def solution(brown, yellow):
+    '''
+    area = brown + yewllow = width * height
+    yellow = (width-2)(height-2)
+    brown = area - yellow
+    '''
+    area = brown + yellow    
+    answer = list()
+    width = area - 1
+    for w in range(width, 0, -1):
+        if area % w !=0:
+            continue
+        h = area // w
+        if yellow == (w-2) * (h-2) and brown == area - yellow:
+            if w >=h:
+                answer.insert(0,w)
+                answer.insert(1,h)
+    return answer
+    
+    
+
+
     
     

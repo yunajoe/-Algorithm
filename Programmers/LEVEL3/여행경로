@@ -1,1 +1,21 @@
 
+from collections import deque 
+
+def solution(tickets):
+    queue = deque()
+    tickets.sort()
+    while True:
+        for idx in range(len(tickets)):
+            if "ICN" in tickets[idx][0]:
+                queue.append(tickets[idx])
+                tickets.pop(idx)
+        
+    print(tickets)
+    # print(queue)
+    
+
+            
+            
+
+   
+        

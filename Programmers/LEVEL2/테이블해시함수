@@ -1,0 +1,15 @@
+def solution(data, col, row_begin, row_end):
+    answer = 0
+    data.sort(key=lambda x: x[col-1])
+    result =  list()  
+    for i in range(len(data)-1):
+        if data[i][col-1] == data[i+1][col-1]:
+            if data[i][0] >= data[i+1][0]:
+                result.append(data[i])
+            else:                 
+                result.append(data[i+1])
+
+    res_lis = [d for d in data if d not in result]
+    result.extend(res_lis)
+    cal1, cal2 = sum([r% row_begin for r in result[row_begin-1]]), sum([ r% row_end for r in result[row_end-1]])
+    return cal1 + cal2

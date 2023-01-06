@@ -1,0 +1,24 @@
+
+def dfs(airport_name, tickets, cnt):    
+    answer = list()
+    visited = (len(tickets)+1) * [False]
+    check = False
+    tickets.sort()
+    if cnt == len(tickets):
+        answer.append(airport_name) 
+        check = True  
+    else:
+        answer.append(airport_name)
+        for i in range(len(tickets)):
+            if tickets[i][0] == airport_name and visited[i] == False:
+                visited[i] = True 
+                dfs(tickets[i][1], tickets, cnt+1)
+    return answer
+
+
+def solution(tickets):
+    print(dfs('ICN', tickets, 0))
+
+
+
+

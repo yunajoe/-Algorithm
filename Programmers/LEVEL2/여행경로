@@ -18,6 +18,33 @@ def dfs(airport_name, tickets, cnt):
 
 def solution(tickets):
     print(dfs('ICN', tickets, 0))
+    
+========================================================
+
+
+def solution(tickets):
+    answer = list()  
+    visited = len(tickets) * [False] 
+    tickets.sort() 
+    DFS("ICN",tickets, visited, answer)    
+
+def DFS(airport, tickets, visited,answer):    
+    for i in range(len(tickets)):
+        if tickets[i][0] == airport and visited[i] == False:
+            visited[i] = True  
+            if len(answer) != 0:
+                if answer[-1] == airport:
+                    answer.append(tickets[i][1])  
+            else:
+                answer.append(tickets[i][0])  
+                answer.append(tickets[i][1])  
+            next_airport =tickets[i][1]
+            DFS(next_airport,tickets,visited,answer)
+    if all(visited) == True:
+        return
+    return answer
+    
+    
 
 
 

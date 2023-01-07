@@ -21,6 +21,7 @@ def solution(tickets):
     
 ========================================================
 
+# 2차시도..None값이 나옴
 
 def solution(tickets):
     answer = list()  

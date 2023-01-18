@@ -1,6 +1,36 @@
-# "2022.05.19", ["A 6", "B 12", "C 3"], ["2021.05.02 A", "2021.07.01 B", "2022.02.19 C", "2022.02.20 C"]  
-#  오늘날짜랑 비교하여 temrs가 > 오늘날짜 이면은 유효기간이 지남 => 파기 
+def convert_to_int(dic):
+    result = {k: [int(i) for i in v.split('.')] for k, v in dic.items()}
+    return result  
+
 def solution(today, terms, privacies):
-    condition =  {term.split()[0]: term.split()[1] for term in terms} 
-    d = {pri.split()[1] : pri.split()[0] for pri in  privacies}
-    return condition
+    # {"A":"6","B":"12","C":"3"}
+    t = {term.split()[0]: int(term.split()[1]) for term in terms}   
+    # {"A":"2021.05.02","B":"2021.07.01","C":"2022.02.20"}
+    result = list()
+    for k, v in t.items():
+        for pri in privacies:
+            date_term, alphabet =  pri.split()[0], pri.split()[1]
+            if k == alphabet:
+                year, month, day = date_term.split('.')[0], date_term.split('.')[1], date_term.split('.')[2]
+                year, month, day = int(year), int(month), int(day)  
+                month += v
+                result.append([year,month,day])   
+    today = today.split('.')
+    today = [int(i) for i in today]
+    
+    # [2022,5,19]
+    # [[2021,5,2],[2021,7,1],[2022,2,19],[2022,2,20]]
+    cnt = 0
+    for r in result:     
+        y, m, d = r[0], r[1], r[2]
+        if (today[0] < y) :
+            cnt += 1  
+        elif (today[0] <=y) and (today[1] <=m):
+            cnt += 1      
+    return cnt
+    
+            
+
+
+        
+   

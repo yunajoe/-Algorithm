@@ -32,7 +32,7 @@ def solution(today, terms, privacies):
     return cnt
     
 ==================================================================
-# 두번째시도   
+# 두번째시도   ==> 날짜는 맞으나 순서? 가 
 
 import datetime  
 def convert_to_int(dic):

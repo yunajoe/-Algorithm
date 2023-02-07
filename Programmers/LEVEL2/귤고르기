@@ -1,0 +1,30 @@
+dic = dict()
+def solution(k, tangerine):    
+    for t in tangerine:
+        dic[t] = dic.get(t, 0) + 1          
+    res = sorted(dic.items(), key=lambda x: x[1], reverse=True)
+    for r in res:
+        cnt = 0 
+        answer = 0
+        size, num = r
+        while True:
+            cnt += num
+            answer += 1
+            if cnt >= k:
+                break
+        return answer
+        
+정확성: 38.2
+합계: 38.2 / 100.0
+                
+        
+
+            
+                
+
+  
+        
+
+
+        
+  

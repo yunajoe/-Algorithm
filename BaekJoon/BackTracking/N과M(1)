@@ -1,0 +1,22 @@
+n, m = map(int, input().split())
+
+visited = [False] * n 
+result = list()
+
+
+def solution(depth, n, m):
+    if depth == m:
+        for i in range(len(result)):
+            print(result[i], end=" ")
+        print()
+        return 
+    
+    for i in range(n):
+        if visited[i] == False:
+            visited[i] = True
+            result.append(i+1)
+            solution(depth+1, n, m)
+            visited[i] = False 
+            result.pop()
+
+solution(0, n, m)

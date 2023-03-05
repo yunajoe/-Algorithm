@@ -1,0 +1,34 @@
+# 1과 다른점은 depth보다 큰 수만 append하기 
+
+
+n, m = 4, 2 
+result = list()
+visited = [False] * n   
+ 
+lis = list()  
+
+def solution(depth, n, m):
+    if depth == m:
+        for i in range(len(result)):                
+              print(result[i], end=" ")
+        print()
+        return  
+    
+    for i in range(n):  # [True, True, False, False ]
+        if i >= depth:  
+            if visited[i] == False:
+                visited[i] = True   
+                result.append(i+1)  # 
+                solution(depth+1, n, m)  
+          
+                result.pop()
+                visited[i] = False
+
+            
+solution(0,n,m)
+
+
+    
+
+        
+    

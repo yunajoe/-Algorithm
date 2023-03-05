@@ -16,6 +16,7 @@ def solution(depth, n, m):
             visited[i] = True
             result.append(i+1)
             solution(depth+1, n, m)
+            # False로 바꿔 놓지 않으면은 i=0을 다 수행한 후에,i=1이 되었을때 visited값들이 [True, True, True, True] 가 되어 있어서 새로운 result값들이 append되지 않는다 
             visited[i] = False 
             result.pop()
 

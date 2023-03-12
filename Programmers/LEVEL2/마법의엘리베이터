@@ -1,0 +1,43 @@
+# map(fun, iter)
+storey = 2554
+
+def get_num(storey):
+    """storey의 자릿수"""
+    return list(map(int, str(storey)))    
+
+
+def solution(storey):
+    digit_num = get_num(storey)       
+    ten_num = 10 ** (len(digit_num)-1)
+    n_num = [ i for i in range(digit_num[0], digit_num[0] +2 )]
+    result = list(map(lambda x: x * ten_num, n_num))   
+    return result     
+
+def final(storey):
+    answer = list()
+    cnt = 0 
+    result = solution(storey)  # [10,20]
+    for i in result:  # 10, 20 .. 
+        while True:
+            if i == storey:
+                answer.append(cnt)
+                cnt = 0                  
+                break              
+            else:
+                if i < storey:
+                    i += 1              
+                    cnt += 1
+                elif i > storey:
+                    i -= 1
+                    cnt += 1
+    extra_num = list(map(lambda x: x // 10, result))
+
+    return min([x + y for x, y in zip(extra_num, answer )])       
+                  
+
+
+print(final(storey))  # 6, 4 
+    
+
+    
+    
